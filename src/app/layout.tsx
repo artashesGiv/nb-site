@@ -5,8 +5,8 @@ import '@styles/index.scss'
 import { nunitoSans } from '@styles/fonts'
 
 export const metadata: Metadata = {
-  title: 'METEO',
-  description: 'METEO FRONTEND',
+  title: 'New Brand',
+  description: 'New Brand Site',
 }
 
 export default function RootLayout({
