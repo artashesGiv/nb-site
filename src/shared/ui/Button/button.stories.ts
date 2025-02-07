@@ -10,6 +10,8 @@ const meta = {
   },
   args: {
     onClick: fn(),
+    disabled: false,
+    loading: false,
   },
   argTypes: {
     size: {
@@ -27,9 +29,14 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+export const Default: Story = {
+  args: {
+    text: 'Button',
+  },
+};
+
 export const Primary: Story = {
   args: {
-    disabled: false,
     text: 'Button',
     view: 'primary',
     size: 'l',
@@ -38,7 +45,6 @@ export const Primary: Story = {
 
 export const Base: Story = {
   args: {
-    disabled: false,
     text: 'Button',
     view: 'base',
     size: 'l',
@@ -47,7 +53,6 @@ export const Base: Story = {
 
 export const Flat: Story = {
   args: {
-    disabled: false,
     text: 'Button',
     view: 'flat',
     size: 'l',
@@ -56,7 +61,6 @@ export const Flat: Story = {
 
 export const WithIcon: Story = {
   args: {
-    disabled: false,
     text: 'Button',
     view: 'primary',
     size: 'l',
@@ -66,7 +70,6 @@ export const WithIcon: Story = {
 
 export const IsOnlyIcon: Story = {
   args: {
-    disabled: false,
     view: 'primary',
     size: 'l',
     icon: 'cross',
