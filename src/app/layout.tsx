@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import './layout.scss'
 import '@styles/index.scss'
-import { nunitoSans } from '@styles/fonts'
+import { mulish, nunitoSans } from '@styles/fonts'
 
 export const metadata: Metadata = {
   title: 'New Brand',
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
-      <body className={`${nunitoSans.variable}`}>
+      <body className={`${nunitoSans.variable} ${mulish.variable}`}>
         <div className='menu'>
           <Link href='/'>Home</Link>
           <Link href='/auth'>Auth</Link>
