@@ -1,26 +1,58 @@
-import { memo, useMemo } from 'react'
+import { memo, useMemo } from 'react';
+import { IconBase } from '../IconBase';
 
-import './button.scss'
+import './button.scss';
+
+type ButtonView = 'primary' | 'base' | 'flat';
+type ButtonSize = 's' | 'm' | 'l' | 'xl';
 
 export type ButtonProps = DefaultProps<{
-  disabled?: boolean
-  text?: string
-  className?: string
-  onClick: () => void
-}>
+  text?: string;
+  view?: ButtonView;
+  size?: ButtonSize;
+  icon?: Icons;
+  disabled?: boolean;
+  loading?: boolean;
+  onClick: () => void;
+}>;
 
-export const Button = memo<ButtonProps>(
-  ({ onClick, disabled = false, className, text }) => {
-    const classes = useMemo(() => {
-      return `button ${disabled && 'is-disabled'} ${className || ''}`
-    }, [disabled, className])
+export const Button = memo<ButtonProps>(props => {
+  const { text, icon, onClick } = props;
 
-    return (
-      <button className={classes} onClick={onClick}>
-        {text}
-      </button>
-    )
-  },
-)
+  // const isOnlyIcon = useMemo(() => {
+  //   return icon && !text;
+  // }, [text, icon]);
 
-Button.displayName = 'Button'
+  const classes = useButtonClasses(props);
+
+  return (
+    <button className={classes} onClick={onClick}>
+      {icon && <IconBase name={icon} className='button__icon' />}
+      {text}
+    </button>
+  );
+});
+
+Button.displayName = 'Button';
+
+const useButtonClasses = ({
+  disabled,
+  className,
+  size,
+  view,
+  loading,
+}: ButtonProps) =>
+  useMemo(() => {
+    const classes = [
+      className,
+      'button',
+      `button--size-${size}`,
+      `button--view-${view}`,
+    ];
+
+    if (disabled || loading) {
+      classes.push('is-disabled');
+    }
+
+    return classes.join(' ');
+  }, [disabled, className, size, view, loading]);

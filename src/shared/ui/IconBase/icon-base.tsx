@@ -1,15 +1,18 @@
-import { memo, useMemo } from 'react'
+import { memo, useMemo } from 'react';
 
-import './icon-base.scss'
+import './icon-base.scss';
 
-export type IconBaseProps = {
-  name: Icons
-}
+export type IconBaseProps = DefaultProps<{
+  name: Icons;
+}>;
 
-export const IconBase = memo<IconBaseProps>(({ name }) => {
-  const classes = useMemo(() => `icon-base icon-${name}`, [name])
+export const IconBase = memo<IconBaseProps>(({ name, className }) => {
+  const classes = useMemo(
+    () => `${className} icon-base icon-${name}`,
+    [name, className],
+  );
 
-  return <i className={classes} />
-})
+  return <i className={classes} />;
+});
 
-IconBase.displayName = 'IconBase'
+IconBase.displayName = 'IconBase';
