@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   sassOptions: {
     prependData: `
     @use "styles/utility/mixins.scss" as *;
-    @use "styles/utility/functions.scss" as *; 
+    @use "styles/utility/functions.scss" as *;
     `,
   },
   output: 'export',
