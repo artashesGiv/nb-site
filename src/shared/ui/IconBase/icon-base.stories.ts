@@ -1,5 +1,5 @@
-import { IconBase } from './icon-base'
-import type { Meta, StoryObj } from '@storybook/react'
+import { IconBase } from './icon-base';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'Shared/IconBase',
@@ -7,20 +7,20 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-} satisfies Meta<typeof IconBase>
+} satisfies Meta<typeof IconBase>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Cross: Story = {
   args: {
     name: 'cross',
   },
-}
+};
 
 export const Trash: Story = {
   args: {
     name: 'trash',
   },
-}
+};

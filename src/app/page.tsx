@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import './page.scss'
+import './page.scss';
 
 export default function Index() {
-  return <div className='index'>INDEX</div>
+  return <div className='index'>INDEX</div>;
 }
