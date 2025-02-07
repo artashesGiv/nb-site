@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'icons';
+  src:
+    url('/fonts/icons/icons.woff?58aef879cc852b81c686659878b32d1d')
+      format('woff'),
+    url('/fonts/icons/icons.woff2?58aef879cc852b81c686659878b32d1d')
+      format('woff2');
+}
+
+i[class^='icon-']:before,
+i[class*=' icon-']:before {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cross:before {
+  content: '\f101';
+}
+.icon-trash:before {
+  content: '\f102';
+}
