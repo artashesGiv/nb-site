@@ -1,23 +1,23 @@
-import { memo, ReactNode, useMemo } from 'react'
+import { memo, useMemo } from 'react'
 
 import './button.scss'
 
-export type ButtonProps = {
+export type ButtonProps = DefaultProps<{
   disabled?: boolean
+  text?: string
   className?: string
-  children?: ReactNode
   onClick: () => void
-}
+}>
 
 export const Button = memo<ButtonProps>(
-  ({ children, onClick, disabled = false, className }) => {
+  ({ onClick, disabled = false, className, text }) => {
     const classes = useMemo(() => {
       return `button ${disabled && 'is-disabled'} ${className || ''}`
     }, [disabled, className])
 
     return (
       <button className={classes} onClick={onClick}>
-        {children}
+        {text}
       </button>
     )
   },
