@@ -19,10 +19,6 @@ export type ButtonProps = DefaultProps<{
 export const Button = memo<ButtonProps>(props => {
   const { text, icon, onClick } = props;
 
-  // const isOnlyIcon = useMemo(() => {
-  //   return icon && !text;
-  // }, [text, icon]);
-
   const classes = useButtonClasses(props);
 
   return (
@@ -41,18 +37,26 @@ const useButtonClasses = ({
   size,
   view,
   loading,
+  icon,
+  text,
 }: ButtonProps) =>
   useMemo(() => {
     const classes = [
       className,
       'button',
-      `button--size-${size}`,
-      `button--view-${view}`,
+      `button--size--${size}`,
+      `button--view--${view}`,
     ];
+
+    const isOnlyIcon = icon && !text;
 
     if (disabled || loading) {
       classes.push('is-disabled');
     }
 
+    if (isOnlyIcon) {
+      classes.push('is-only-icon');
+    }
+
     return classes.join(' ');
-  }, [disabled, className, size, view, loading]);
+  }, [disabled, className, size, view, loading, icon, text]);

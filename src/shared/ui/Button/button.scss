@@ -13,7 +13,7 @@
   transition: var(--transition-all);
 
   &--view {
-    &-primary {
+    &--primary {
       background-color: var(--main-orange);
       color: var(--main-white);
 
@@ -22,7 +22,7 @@
       }
     }
 
-    &-base {
+    &--base {
       background-color: var(--main-white);
       color: var(--main-black);
 
@@ -32,7 +32,7 @@
       }
     }
 
-    &-flat {
+    &--flat {
       background-color: transparent;
       color: var(--main-black);
 
@@ -43,8 +43,9 @@
   }
 
   &--size {
-    &-s {
+    &--s {
       height: toRem(44);
+      min-width: toRem(44);
       font: var(--b1);
       border-radius: toRem(12);
 
@@ -52,8 +53,10 @@
         font-size: toRem(30);
       }
     }
-    &-m {
+
+    &--m {
       height: toRem(64);
+      min-width: toRem(64);
       font: var(--sh1);
       border-radius: toRem(12);
 
@@ -61,22 +64,26 @@
         font-size: toRem(30);
       }
     }
-    &-l {
-      height: toRem(80);
-      font: var(--b1);
-      border-radius: toRem(16);
 
-      #{$b}__icon {
-        font-size: toRem(30);
-      }
-    }
-    &-xl {
-      height: toRem(92);
-      font: var(--sh1);
+    &--l {
+      height: toRem(80);
+      min-width: toRem(80);
+      font: var(--b1);
       border-radius: toRem(16);
 
       #{$b}__icon {
         font-size: toRem(40);
+      }
+    }
+
+    &--xl {
+      height: toRem(92);
+      min-width: toRem(92);
+      font: var(--sh1);
+      border-radius: toRem(16);
+
+      #{$b}__icon {
+        font-size: toRem(50);
       }
     }
   }
@@ -84,5 +91,10 @@
   &.is-disabled {
     @include disabled;
     opacity: 0.6;
+  }
+
+  &.is-only-icon {
+    width: auto;
+    padding: 0;
   }
 }

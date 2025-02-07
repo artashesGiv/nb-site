@@ -1,4 +1,4 @@
-import { Button } from './button';
+import { Button, ButtonProps } from './button';
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -14,11 +14,11 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['s', 'm', 'l', 'xl'],
+      options: ['s', 'm', 'l', 'xl'] as ButtonProps['size'][],
     },
     view: {
       control: 'select',
-      options: ['primary', 'base'],
+      options: ['primary', 'base', 'flat'] as ButtonProps['view'][],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -58,6 +58,15 @@ export const WithIcon: Story = {
   args: {
     disabled: false,
     text: 'Button',
+    view: 'primary',
+    size: 'l',
+    icon: 'cross',
+  },
+};
+
+export const IsOnlyIcon: Story = {
+  args: {
+    disabled: false,
     view: 'primary',
     size: 'l',
     icon: 'cross',
