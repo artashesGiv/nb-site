@@ -1,0 +1,18 @@
+.card-base {
+  border-radius: var(--border-base);
+  border: 1px solid var(--main-gray);
+}
+
+.card-base--size {
+  &--s {
+    padding: toRem(0);
+  }
+
+  &--m {
+    padding: toRem(24);
+  }
+
+  &--l {
+    padding: toRem(32);
+  }
+}
