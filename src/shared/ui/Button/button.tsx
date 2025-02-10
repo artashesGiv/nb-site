@@ -3,6 +3,7 @@ import { memo, useMemo } from 'react';
 import { IconBase } from '../IconBase';
 import { Spinner, SpinnerProps } from '../Spinner';
 import { TransitionBase } from '../TransitionBase';
+
 import './button.scss';
 
 type ButtonView = 'primary' | 'base' | 'flat';
