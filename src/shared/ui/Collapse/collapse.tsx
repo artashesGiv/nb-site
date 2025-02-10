@@ -2,12 +2,12 @@ import './collapse.scss';
 import { memo, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 
 export type CollapseProps = DefaultProps<{
-  title: ReactNode;
-  collapsed: ReactNode;
+  children: [ReactNode, ReactNode];
+  onToggle?: (isOPen: boolean) => void;
 }>;
 
 export const Collapse = memo<CollapseProps>(
-  ({ title, collapsed, className = '' }) => {
+  ({ children, className = '', onToggle }) => {
     const [isOpen, setIsOpen] = useState(false);
     const contentRef = useRef<HTMLDivElement>(null);
     const classes = useProjectCardClasses(className, isOpen);
@@ -20,6 +20,13 @@ export const Collapse = memo<CollapseProps>(
       }
     }, [isOpen]);
 
+    useEffect(() => {
+      if (onToggle) {
+        onToggle(isOpen);
+      }
+    }, [isOpen, onToggle]);
+
+    const [title, content] = children;
     return (
       <div className={classes}>
         <div
@@ -29,7 +36,7 @@ export const Collapse = memo<CollapseProps>(
           {title}
         </div>
         <div className='collapse__content' ref={contentRef}>
-          {collapsed}
+          {content}
         </div>
       </div>
     );

@@ -15,7 +15,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Collapse1: Story = {
   args: {
-    title: 'Test Collapse',
-    collapsed: 'Collapsed text',
+    children: ['Test Collapse', 'Collapsed text'],
   },
 };

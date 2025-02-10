@@ -1,0 +1,30 @@
+.service-card {
+  $b: &;
+
+  &--open {
+    #{$b}__icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__text {
+    font-size: toRem(28);
+    user-select: none;
+  }
+
+  &__content {
+    font-size: toRem(18);
+  }
+
+  &__icon {
+    font-size: toRem(30);
+    transition: var(--transition-all);
+    transition-property: transform;
+  }
+}
