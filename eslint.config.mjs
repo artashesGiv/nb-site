@@ -60,11 +60,6 @@ const eslintConfig = [
               position: 'after',
             },
             {
-              pattern: './*.module.scss', // Модули стилей
-              group: 'index',
-              position: 'after',
-            },
-            {
               pattern: './*.scss', // Обычные стили
               group: 'index',
               position: 'after',

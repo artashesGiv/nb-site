@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix && prettier --write .",
+    "lint": "next lint --fix",
     "format-icons": "node scripts/formattingIcons.mjs",
     "icons": "npm run format-icons && fantasticon",
     "storybook": "storybook dev -p 6006",
@@ -50,6 +50,8 @@
     "husky": "^8.0.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["next lint --fix"]
+    "*.{js,jsx,ts,tsx}": [
+      "next lint --fix", "prettier --write ."
+    ]
   }
 }
