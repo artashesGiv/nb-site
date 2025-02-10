@@ -1,0 +1,22 @@
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: toRem(32);
+}
+
+.project-card__image {
+  border-radius: var(--border-radius-base);
+}
+
+.project-card__title {
+  font-size: toRem(32);
+}
+
+.project-card__href {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
