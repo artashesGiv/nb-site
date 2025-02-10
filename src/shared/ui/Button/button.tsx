@@ -1,6 +1,7 @@
 import { memo, useMemo } from 'react';
 import { IconBase } from '../IconBase';
 import { Spinner, SpinnerProps } from '../Spinner';
+import { TransitionBase } from '../TransitionBase';
 
 import './button.scss';
 
@@ -14,7 +15,6 @@ export type ButtonProps = DefaultProps<{
   icon?: Icons;
   disabled?: boolean;
   loading?: boolean;
-  onClick?: () => void;
 }>;
 
 export const Button = memo<ButtonProps>(props => {
@@ -38,14 +38,19 @@ export const Button = memo<ButtonProps>(props => {
 
   return (
     <button className={classes} onClick={onClick}>
-      {loading ? (
-        <Spinner {...spinnerProps} />
-      ) : (
-        <>
-          {icon && <IconBase name={icon} className='button__icon' />}
-          {text}
-        </>
-      )}
+      <TransitionBase
+        isVisible={true}
+        keyProp={loading ? 'loading' : 'default'}
+      >
+        {loading ? (
+          <Spinner {...spinnerProps} />
+        ) : (
+          <>
+            {icon && <IconBase name={icon} className='button__icon' />}
+            {text}
+          </>
+        )}
+      </TransitionBase>
     </button>
   );
 });

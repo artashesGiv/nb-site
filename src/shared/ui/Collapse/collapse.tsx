@@ -1,5 +1,15 @@
+import {
+  Dispatch,
+  memo,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import { TransitionExpand } from '../TransitionExpand';
+
 import './collapse.scss';
-import { memo, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 
 export type CollapseProps = DefaultProps<{
   children: [ReactNode, ReactNode];
@@ -8,36 +18,19 @@ export type CollapseProps = DefaultProps<{
 
 export const Collapse = memo<CollapseProps>(
   ({ children, className = '', onToggle }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const contentRef = useRef<HTMLDivElement>(null);
-    const classes = useProjectCardClasses(className, isOpen);
-
-    useEffect(() => {
-      if (contentRef.current) {
-        contentRef.current.style.maxHeight = isOpen
-          ? `${contentRef.current.scrollHeight}px`
-          : '0px';
-      }
-    }, [isOpen]);
-
-    useEffect(() => {
-      if (onToggle) {
-        onToggle(isOpen);
-      }
-    }, [isOpen, onToggle]);
+    const classes = useCollapseClasses(className);
+    const [isOpen, setIsOpen] = useCollapseToggle(onToggle);
 
     const [title, content] = children;
     return (
       <div className={classes}>
         <div
-          className={'collapse__title'}
+          className='collapse__title'
           onClick={() => setIsOpen(prev => !prev)}
         >
           {title}
         </div>
-        <div className='collapse__content' ref={contentRef}>
-          {content}
-        </div>
+        <TransitionExpand>{isOpen && content}</TransitionExpand>
       </div>
     );
   },
@@ -45,16 +38,23 @@ export const Collapse = memo<CollapseProps>(
 
 Collapse.displayName = 'Collapse';
 
-const useProjectCardClasses = (
-  className: CollapseProps['className'],
-  isOpen: boolean,
-) =>
+const useCollapseToggle = (
+  onToggle: CollapseProps['onToggle'],
+): [boolean, Dispatch<SetStateAction<boolean>>] => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (onToggle) {
+      onToggle(isOpen);
+    }
+  }, [isOpen, onToggle]);
+
+  return [isOpen, setIsOpen];
+};
+
+const useCollapseClasses = (className: CollapseProps['className']) =>
   useMemo(() => {
-    const classes = [
-      className,
-      'collapse',
-      isOpen ? 'collapse--open' : 'collapse--closed',
-    ];
+    const classes = [className, 'collapse'];
 
     return classes.join(' ');
-  }, [className, isOpen]);
+  }, [className]);

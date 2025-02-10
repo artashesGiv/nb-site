@@ -1,7 +1,8 @@
-import './partner-card.scss';
 import { memo, useMemo } from 'react';
 import { CardBase } from '@/shared/ui/CardBase';
 import Image from 'next/image';
+
+import './partner-card.scss';
 
 export type PartnerCardProps = DefaultProps<{
   src: string;
@@ -13,7 +14,7 @@ export const PartnerCard = memo<PartnerCardProps>(
     const classes = usePartnerCardClasses(className);
 
     return (
-      <CardBase className={classes} size={'s'} href={href}>
+      <CardBase className={classes} size={'s'} href={href} view='fill'>
         <Image
           className={'partner-card__image'}
           src={src}

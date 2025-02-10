@@ -1,3 +1,5 @@
+@use './functions' as *;
+
 @mixin center($position: 'both') {
   position: absolute;
 
@@ -29,4 +31,17 @@
 @mixin disabled {
   cursor: not-allowed;
   pointer-events: none;
+}
+
+@mixin row($gap: 0) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: toRem($gap);
+}
+
+@mixin column($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: toRem($gap);
 }

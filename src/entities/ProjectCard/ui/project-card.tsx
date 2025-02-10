@@ -1,7 +1,8 @@
-import './project-card.scss';
 import { memo, useMemo } from 'react';
 import { CardBase } from '@/shared/ui/CardBase';
 import Image from 'next/image';
+
+import './project-card.scss';
 
 export type ProjectCardProps = DefaultProps<{
   src: string;
@@ -16,13 +17,13 @@ export const ProjectCard = memo<ProjectCardProps>(
     return (
       <CardBase className={classes} size={'l'} href={href}>
         <Image
-          className={'project-card__image'}
+          className='project-card__image'
           src={src}
           alt={title}
           width={800}
           height={400}
         />
-        <span className={'project-card__title'}>{title}</span>
+        <span className='project-card__title'>{title}</span>
       </CardBase>
     );
   },

@@ -30,4 +30,8 @@ const eslintConfig = [
   },
 ];
 
+// порядок импорта
+// классы без скобок
+// самозакрывающиеся теги
+
 export default eslintConfig;

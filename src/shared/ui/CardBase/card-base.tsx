@@ -1,17 +1,25 @@
-import './card-base.scss';
 import { memo, useMemo } from 'react';
+
+import './card-base.scss';
 
 export type CardBaseProps = DefaultPropsWithChildren<{
   size?: 's' | 'm' | 'l';
+  view?: 'base' | 'fill';
   href?: string;
+  interactive?: boolean;
 }>;
 
 export const CardBase = memo<CardBaseProps>(
-  ({ children, className = '', size = 'm', href }) => {
-    const classes = useProjectCardClasses({ className, size });
+  ({ children, className = '', size = 'm', view = 'base', href, onClick }) => {
+    const classes = useProjectCardClasses({
+      className,
+      size,
+      view,
+      onClick,
+    });
 
     return (
-      <div className={classes}>
+      <div className={classes} onClick={onClick || undefined}>
         {children}
         {href && <a href={href} className={'card-base__href'}></a>}
       </div>
@@ -21,9 +29,23 @@ export const CardBase = memo<CardBaseProps>(
 
 CardBase.displayName = 'CardBase';
 
-const useProjectCardClasses = ({ className, size }: CardBaseProps) =>
+const useProjectCardClasses = ({
+  className,
+  size,
+  view,
+  onClick,
+}: CardBaseProps) =>
   useMemo(() => {
-    const classes = [className, 'card-base', `card-base--size--${size}`];
+    const classes = [
+      className,
+      'card-base',
+      `card-base--size--${size}`,
+      `card-base--view--${view}`,
+    ];
+
+    if (onClick) {
+      classes.push('is-interactive');
+    }
 
     return classes.join(' ');
-  }, [className, size]);
+  }, [className, size, view, onClick]);

@@ -4,19 +4,4 @@
   &__title {
     cursor: pointer;
   }
-
-  &--open {
-    #{$b}__content {
-      overflow: hidden;
-      transition: var(--transition-all);
-      transition-property: max-height;
-    }
-  }
-
-  &__content {
-    max-height: 0;
-    overflow: hidden;
-    transition: var(--transition-all);
-    transition-property: max-height;
-  }
 }

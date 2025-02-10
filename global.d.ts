@@ -6,6 +6,7 @@ declare global {
   type Icons = IconsId;
   type DefaultProps<T = object> = {
     className?: string;
+    onClick?: () => void;
   } & T;
   type DefaultPropsWithChildren<T> = DefaultProps<T> & { children?: ReactNode };
 }
