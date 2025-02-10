@@ -6,16 +6,15 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --fix && prettier --write .",
     "format-icons": "node scripts/formattingIcons.mjs",
     "icons": "npm run format-icons && fantasticon",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "husky && husky install"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "framer-motion": "^12.4.1",
     "@pbe/react-yandex-maps": "^1.2.5",
+    "framer-motion": "^12.4.1",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -38,6 +37,7 @@
     "eslint-config-next": "15.1.6",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-storybook": "^0.11.2",
     "fantasticon": "^1.2.3",
     "husky": "^8.0.3",
@@ -45,21 +45,11 @@
     "oslllo-svg-fixer": "^5.0.0",
     "prettier": "^3.4.2",
     "sass": "^1.83.4",
+    "simple-git-hooks": "^2.11.1",
     "storybook": "^8.5.3",
     "typescript": "^5"
   },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
-  },
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{css,scss}": [
-      "prettier --write"
-    ]
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   }
 }

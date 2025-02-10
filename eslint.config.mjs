@@ -14,6 +14,8 @@ const eslintConfig = [
     'next/core-web-vitals',
     'next/typescript',
     'plugin:import/recommended',
+    'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ),
   {
     ignores: [
@@ -27,6 +29,51 @@ const eslintConfig = [
       '**/*.generated.*',
       '.env*',
     ],
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
+      'prettier/prettier': 'error',
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin', // Встроенные модули (fs, path)
+            'external', // Пакеты из node_modules
+            'internal', // Внутренние модули вашего проекта
+            'parent', // Родительские директории (../)
+            'sibling', // Соседние файлы (./)
+            'index', // index файлы
+            'object', // Импорт через `import * as X`
+            'type', // Импорты только типов
+          ],
+          'newlines-between': 'always', // Разделять группы пустыми строками
+          alphabetize: {
+            order: 'asc', // Сортировать по алфавиту
+            caseInsensitive: true, // Игнорировать регистр
+          },
+          pathGroups: [
+            {
+              pattern: '@/**', // Кастомные компоненты (предполагая алиас @)
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: './*.module.scss', // Модули стилей
+              group: 'index',
+              position: 'after',
+            },
+            {
+              pattern: './*.scss', // Обычные стили
+              group: 'index',
+              position: 'after',
+            },
+          ],
+          pathGroupsExcludedImportTypes: ['builtin'],
+        },
+      ],
+    },
   },
 ];
 

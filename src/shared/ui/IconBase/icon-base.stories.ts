@@ -1,4 +1,5 @@
 import { IconBase } from './icon-base';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

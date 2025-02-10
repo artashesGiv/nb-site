@@ -1,6 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { CardBase, CardBaseProps } from './card-base';
 import { fn } from '@storybook/test';
+
+import { CardBase, CardBaseProps } from './card-base';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'Shared/CardBase',

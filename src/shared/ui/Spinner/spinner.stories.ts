@@ -1,4 +1,5 @@
 import { Spinner, SpinnerProps } from './spinner';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { memo, useMemo, useState } from 'react';
+
+import { CardBase, type CardBaseProps } from '../CardBase';
 import { IconBase } from '../IconBase';
 import { TransitionExpand } from '../TransitionExpand';
-import { CardBase, type CardBaseProps } from '../CardBase';
 
 import './card-collapse.scss';
 

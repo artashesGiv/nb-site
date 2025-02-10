@@ -1,5 +1,7 @@
-import { Button, ButtonProps } from './button';
 import { fn } from '@storybook/test';
+
+import { Button, ButtonProps } from './button';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

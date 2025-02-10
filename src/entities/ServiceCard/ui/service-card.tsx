@@ -1,4 +1,5 @@
 import { memo, useMemo } from 'react';
+
 import { CardCollapse } from '@/shared';
 
 import './service-card.scss';

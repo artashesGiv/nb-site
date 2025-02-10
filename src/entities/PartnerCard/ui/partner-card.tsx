@@ -1,6 +1,7 @@
-import { memo, useMemo } from 'react';
-import { CardBase } from '@/shared/ui/CardBase';
 import Image from 'next/image';
+import { memo, useMemo } from 'react';
+
+import { CardBase } from '@/shared/ui/CardBase';
 
 import './partner-card.scss';
 

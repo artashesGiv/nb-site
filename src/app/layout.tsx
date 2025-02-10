@@ -1,7 +1,9 @@
+import { mulish, nunitoSans } from '@styles/fonts';
+
 import type { Metadata } from 'next';
+
 import './layout.scss';
 import '@styles/index.scss';
-import { mulish, nunitoSans } from '@styles/fonts';
 
 export const metadata: Metadata = {
   title: 'New Brand',

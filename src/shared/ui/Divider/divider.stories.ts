@@ -1,4 +1,5 @@
 import { Divider, DividerProps } from './divider';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {

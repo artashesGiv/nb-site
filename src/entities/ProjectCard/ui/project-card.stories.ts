@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { ProjectCard } from '@/entities/ProjectCard/ui/project-card';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'Entities/ProjectCard',
