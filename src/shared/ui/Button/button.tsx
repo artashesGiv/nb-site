@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import { IconBase } from '../IconBase';
+import { Spinner, SpinnerProps } from '../Spinner';
 
 import './button.scss';
 
@@ -13,22 +14,38 @@ export type ButtonProps = DefaultProps<{
   icon?: Icons;
   disabled?: boolean;
   loading?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }>;
 
 export const Button = memo<ButtonProps>(props => {
-  const { text, icon, onClick } = props;
+  const normalizedProps = {
+    ...props,
+    view: props.view ?? 'primary',
+    size: props.size ?? 'm',
+  };
 
-  // const isOnlyIcon = useMemo(() => {
-  //   return icon && !text;
-  // }, [text, icon]);
+  const {
+    text,
+    icon,
+    onClick,
+    loading,
+    view = 'primary',
+    size = 'm',
+  } = normalizedProps;
 
-  const classes = useButtonClasses(props);
+  const classes = useButtonClasses(normalizedProps);
+  const spinnerProps = useSpinnerProps({ view, size });
 
   return (
     <button className={classes} onClick={onClick}>
-      {icon && <IconBase name={icon} className='button__icon' />}
-      {text}
+      {loading ? (
+        <Spinner {...spinnerProps} />
+      ) : (
+        <>
+          {icon && <IconBase name={icon} className='button__icon' />}
+          {text}
+        </>
+      )}
     </button>
   );
 });
@@ -41,18 +58,48 @@ const useButtonClasses = ({
   size,
   view,
   loading,
+  icon,
+  text,
 }: ButtonProps) =>
   useMemo(() => {
     const classes = [
-      className,
       'button',
-      `button--size-${size}`,
-      `button--view-${view}`,
+      `button--size--${size}`,
+      `button--view--${view}`,
     ];
+
+    if (className) {
+      classes.push(className);
+    }
 
     if (disabled || loading) {
       classes.push('is-disabled');
     }
 
+    if (icon && !text) {
+      classes.push('is-only-icon');
+    }
+
     return classes.join(' ');
-  }, [disabled, className, size, view, loading]);
+  }, [disabled, className, size, view, loading, icon, text]);
+
+const SPINNER_VIEW_MAP: Record<ButtonView, SpinnerProps['view']> = {
+  base: 'primary',
+  flat: 'dark',
+  primary: 'light',
+};
+
+const SPINNER_SIZE_MAP: Record<ButtonSize, SpinnerProps['size']> = {
+  s: 's',
+  m: 'm',
+  l: 'l',
+  xl: 'l',
+};
+
+const useSpinnerProps = ({
+  view,
+  size,
+}: Pick<Required<ButtonProps>, 'view' | 'size'>): SpinnerProps => ({
+  view: SPINNER_VIEW_MAP[view],
+  size: SPINNER_SIZE_MAP[size],
+});

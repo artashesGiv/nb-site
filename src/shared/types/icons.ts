@@ -1,1 +1,1 @@
-export type IconsId = 'cross' | 'trash'
+export type IconsId = 'cross' | 'trash';
