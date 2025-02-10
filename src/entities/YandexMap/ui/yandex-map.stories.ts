@@ -13,7 +13,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const YandexMap1: Story = {
+export const Base: Story = {
   args: {
     center: [55.751574, 37.573856],
   },
