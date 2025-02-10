@@ -3,19 +3,25 @@ import { memo, useMemo } from 'react';
 
 export type CardBaseProps = DefaultPropsWithChildren<{
   size?: 's' | 'm' | 'l';
+  href?: string;
 }>;
 
 export const CardBase = memo<CardBaseProps>(
-  ({ children, className = '', size = 'm' }) => {
-    const classes = UseCardBaseClasses({ className, size });
+  ({ children, className = '', size = 'm', href }) => {
+    const classes = useProjectCardClasses({ className, size });
 
-    return <div className={classes}>{children}</div>;
+    return (
+      <div className={classes}>
+        {children}
+        {href && <a href={href} className={'card-base__href'}></a>}
+      </div>
+    );
   },
 );
 
 CardBase.displayName = 'CardBase';
 
-const UseCardBaseClasses = ({ className, size }: CardBaseProps) =>
+const useProjectCardClasses = ({ className, size }: CardBaseProps) =>
   useMemo(() => {
     const classes = [className, 'card-base', `card-base--size--${size}`];
 
