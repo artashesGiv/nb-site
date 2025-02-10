@@ -1,0 +1,20 @@
+.collapse {
+  $b: &;
+
+  &__title {
+    cursor: pointer;
+  }
+
+  &--open {
+    #{$b}__content {
+      transition: var(--transition-all);
+      transition-property: max-height;
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    transition: var(--transition-all);
+    transition-property: max-height;
+  }
+}
