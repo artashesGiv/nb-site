@@ -31,6 +31,8 @@ const eslintConfig = [
       '.env*',
     ],
     rules: {
+      'prettier/prettier': 'off',
+      'react/self-closing-comp': 'error',
       'react/jsx-curly-brace-presence': [
         'error',
         {
@@ -55,7 +57,6 @@ const eslintConfig = [
           caughtErrorsIgnorePattern: '^_', // Игнорирует ошибки в `catch` блоках, начинающиеся с "_"
         },
       ],
-      'prettier/prettier': 'off',
       'import/order': [
         'error',
         {
@@ -111,8 +112,5 @@ const eslintConfig = [
     },
   },
 ];
-
-// классы без скобок
-// самозакрывающиеся теги
 
 export default eslintConfig;

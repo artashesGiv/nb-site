@@ -21,7 +21,7 @@ export const CardBase = memo<CardBaseProps>(
     return (
       <div className={classes} onClick={onClick || undefined}>
         {children}
-        {href && <a href={href} className="card-base__href"></a>}
+        {href && <a href={href} className='card-base__href' />}
       </div>
     );
   },
