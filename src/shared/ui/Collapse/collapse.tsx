@@ -1,8 +1,8 @@
 import {
-  Dispatch,
+  type Dispatch,
   memo,
-  ReactNode,
-  SetStateAction,
+  type ReactNode,
+  type SetStateAction,
   useEffect,
   useMemo,
   useState,

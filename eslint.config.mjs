@@ -17,6 +17,7 @@ const eslintConfig = [
     'plugin:prettier/recommended',
     'plugin:storybook/recommended',
   ),
+
   {
     ignores: [
       '.next/',
@@ -30,42 +31,73 @@ const eslintConfig = [
       '.env*',
     ],
     rules: {
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'inline-type-imports',
+          disallowTypeAnnotations: true,
+        },
+      ],
       '@typescript-eslint/no-unused-vars': [
         'error',
-        { argsIgnorePattern: '^_' },
+        {
+          argsIgnorePattern: '^_', // Игнорирует аргументы, начинающиеся с "_"
+          varsIgnorePattern: '^_', // Игнорирует переменные, начинающиеся с "_"
+          caughtErrorsIgnorePattern: '^_', // Игнорирует ошибки в `catch` блоках, начинающиеся с "_"
+        },
       ],
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'off',
       'import/order': [
         'error',
         {
-          groups: [
-            'builtin', // Встроенные модули (fs, path)
-            'external', // Пакеты из node_modules
-            'internal', // Внутренние модули вашего проекта
-            'parent', // Родительские директории (../)
-            'sibling', // Соседние файлы (./)
-            'index', // index файлы
-            'object', // Импорт через `import * as X`
-            'type', // Импорты только типов
-          ],
-          'newlines-between': 'always', // Разделять группы пустыми строками
-          alphabetize: {
-            order: 'asc', // Сортировать по алфавиту
-            caseInsensitive: true, // Игнорировать регистр
-          },
+          // Определяем порядок групп импортов.
+          // Здесь мы учитываем внешние, внутренние, родительские и index-импорты.
+          groups: ['external', 'internal', 'parent', 'index'],
           pathGroups: [
+            // 1. Импорты React – выводим их первыми среди внешних.
             {
-              pattern: '@/**', // Кастомные компоненты (предполагая алиас @)
+              pattern: 'react',
+              group: 'external',
+              position: 'before',
+            },
+            // 3. Импорты с алиасом "@/*" – относим к внутренним.
+            {
+              pattern: '@/**',
               group: 'internal',
               position: 'after',
             },
+            // 4. Импорты из родительских директорий ("../*") – относим к группе parent.
             {
-              pattern: './*.scss', // Обычные стили
+              pattern: '../**',
+              group: 'parent',
+              position: 'after',
+            },
+            {
+              pattern: './**',
+              group: 'parent',
+              position: 'after',
+            },
+            // 5. Импорты SCSS-файлов – относим к index и размещаем в конце.
+            {
+              pattern: '**/*.{css,scss}',
+              patternOptions: { matchBase: true },
               group: 'index',
               position: 'after',
             },
           ],
-          pathGroupsExcludedImportTypes: ['builtin'],
+          warnOnUnassignedImports: true,
+          // Исключаем реактовские импорты из автоматического распределения по группам,
+          // чтобы правило pathGroups для "react" сработало корректно.
+          pathGroupsExcludedImportTypes: ['react'],
+          // Раздел
+          // яем группы пустыми строками
+          'newlines-between': 'always',
+          // Опционально: сортировка импортов в пределах группы по алфавиту
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
         },
       ],
     },

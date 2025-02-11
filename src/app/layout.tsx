@@ -1,8 +1,9 @@
-import { mulish, nunitoSans } from '@styles/fonts';
-
 import type { Metadata } from 'next';
 
+import { mulish, nunitoSans } from '@styles/fonts';
+
 import './layout.scss';
+
 import '@styles/index.scss';
 
 export const metadata: Metadata = {

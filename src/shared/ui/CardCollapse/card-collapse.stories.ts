@@ -1,6 +1,6 @@
-import { CardCollapse } from '../CardCollapse';
-
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { CardCollapse } from '../CardCollapse';
 
 const meta = {
   title: 'Shared/CardCollapse',

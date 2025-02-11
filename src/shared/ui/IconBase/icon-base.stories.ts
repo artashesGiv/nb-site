@@ -1,6 +1,6 @@
-import { IconBase } from './icon-base';
-
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { IconBase } from './icon-base';
 
 const meta = {
   title: 'Shared/IconBase',

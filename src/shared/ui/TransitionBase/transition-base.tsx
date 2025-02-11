@@ -1,5 +1,6 @@
-import { AnimatePresence, motion } from 'framer-motion';
 import { memo } from 'react';
+
+import { AnimatePresence, motion } from 'framer-motion';
 
 export type TransitionBaseProps = DefaultPropsWithChildren<{
   isVisible: boolean;

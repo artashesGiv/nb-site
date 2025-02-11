@@ -1,5 +1,6 @@
-import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
 import { memo, useMemo } from 'react';
+
+import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
 
 import { CardBase } from '@/shared';
 

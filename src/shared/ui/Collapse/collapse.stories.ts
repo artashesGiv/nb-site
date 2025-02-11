@@ -1,6 +1,6 @@
-import { Collapse } from './collapse';
-
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { Collapse } from './collapse';
 
 const meta = {
   title: 'Shared/Collapse',

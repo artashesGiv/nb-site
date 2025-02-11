@@ -1,8 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { Button, ButtonProps } from './button';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import { Button, type ButtonProps } from './button';
 
 const meta = {
   title: 'Shared/Button',

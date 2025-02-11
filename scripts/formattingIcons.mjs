@@ -1,6 +1,7 @@
+import SVGFixer from 'oslllo-svg-fixer';
+
 import { readdir, unlink } from 'node:fs';
 import { extname, join } from 'node:path';
-import SVGFixer from 'oslllo-svg-fixer';
 
 const iconsFolder = './src/shared/assets/icons';
 const destination = './src/shared/assets/icons/formatted';

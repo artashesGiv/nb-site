@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+
 import path from 'node:path';
 
 const config: StorybookConfig = {

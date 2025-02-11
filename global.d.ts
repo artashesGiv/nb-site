@@ -1,5 +1,6 @@
-import { IconsId } from '@/shared';
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
+
+import { type IconsId } from '@/shared';
 
 declare global {
   type Maybe<T> = T | null | undefined;

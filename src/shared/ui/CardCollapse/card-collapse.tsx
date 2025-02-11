@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { memo, useMemo, useState } from 'react';
+
+import Image from 'next/image';
 
 import { CardBase, type CardBaseProps } from '../CardBase';
 import { IconBase } from '../IconBase';

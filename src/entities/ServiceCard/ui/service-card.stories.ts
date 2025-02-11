@@ -1,6 +1,6 @@
-import { ServiceCard } from '@/entities/ServiceCard/ui/service-card';
-
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { ServiceCard } from './service-card';
 
 const meta = {
   title: 'Entities/ServiceCard',

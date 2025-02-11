@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
 import { memo, useEffect, useRef, useState } from 'react';
+
+import { motion } from 'framer-motion';
 
 export type TransitionExpandProps = DefaultPropsWithChildren<{
   duration?: number;
