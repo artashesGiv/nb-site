@@ -1,0 +1,33 @@
+.input {
+  @include row(10);
+  height: toRem(80);
+  border: 1px solid var(--main-gray);
+  padding: 0 toRem(24);
+  border-radius: toRem(16);
+  transition: var(--transition-all);
+
+  &__icon {
+    font-size: toRem(28);
+  }
+
+  &__value {
+    flex-grow: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font: var(--b1);
+
+    &::placeholder {
+      color: var(--main-gray);
+    }
+  }
+
+  &.is-error {
+    border-color: var(--main-critical);
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-base);
+  }
+}
