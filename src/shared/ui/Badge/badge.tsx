@@ -18,7 +18,7 @@ Badge.displayName = 'Button';
 
 const useBadgeClasses = ({ className }: BadgeProps) =>
   useMemo(() => {
-    const classes = [className, 'badge'];
+    const classes = [className || '', 'badge'];
 
     return classes.join(' ');
   }, [className]);

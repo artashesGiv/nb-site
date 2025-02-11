@@ -1,0 +1,13 @@
+.header {
+  @include row;
+  justify-content: space-between;
+
+  height: toRem(172);
+  background: #ffffffa8;
+  backdrop-filter: blur(44px);
+  padding: 0 toRem(64);
+
+  &__links {
+    @include row(50);
+  }
+}

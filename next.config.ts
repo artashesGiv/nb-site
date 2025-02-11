@@ -13,8 +13,6 @@ const nextConfig: NextConfig = {
     @use "styles/utility/functions.scss" as *;
     `,
   },
-  output: 'export',
-  trailingSlash: true,
 };
 
 export default nextConfig;

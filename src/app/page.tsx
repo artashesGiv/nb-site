@@ -1,7 +1,11 @@
-'use client';
+import { Header } from '@/widgets';
 
 import './page.scss';
 
 export default function Index() {
-  return <div className='index'>INDEX</div>;
+  return (
+    <div className='index'>
+      <Header />
+    </div>
+  );
 }
