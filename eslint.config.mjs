@@ -31,6 +31,14 @@ const eslintConfig = [
       '.env*',
     ],
     rules: {
+      'react/jsx-curly-brace-presence': [
+        'error',
+        {
+          props: 'never', // запрещает фигурные скобки вокруг строковых пропсов
+          children: 'ignore',
+          propElementValues: 'ignore',
+        },
+      ],
       '@typescript-eslint/consistent-type-imports': [
         'error',
         {
@@ -104,7 +112,6 @@ const eslintConfig = [
   },
 ];
 
-// порядок импорта
 // классы без скобок
 // самозакрывающиеся теги
 

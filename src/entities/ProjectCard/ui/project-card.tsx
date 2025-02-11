@@ -17,7 +17,7 @@ export const ProjectCard = memo<ProjectCardProps>(
     const classes = useProjectCardClasses(className);
 
     return (
-      <CardBase className={classes} size={'l'} href={href}>
+      <CardBase className={classes} size="l" href={href}>
         <Image
           className='project-card__image'
           src={src}

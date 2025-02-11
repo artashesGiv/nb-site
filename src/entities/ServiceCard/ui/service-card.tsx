@@ -21,7 +21,7 @@ export const ServiceCard = memo<ServiceCardProps>(
         imageSrc={src}
         cardProps={{ size: 'm' }}
       >
-        <div className={'service-card__content'}>{content}</div>
+        <div className="service-card__content">{content}</div>
       </CardCollapse>
     );
   },

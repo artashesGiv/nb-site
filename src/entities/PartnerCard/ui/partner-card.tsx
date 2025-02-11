@@ -16,9 +16,9 @@ export const PartnerCard = memo<PartnerCardProps>(
     const classes = usePartnerCardClasses(className);
 
     return (
-      <CardBase className={classes} size={'s'} href={href} view='fill'>
+      <CardBase className={classes} size="s" href={href} view='fill'>
         <Image
-          className={'partner-card__image'}
+          className="partner-card__image"
           src={src}
           alt={src}
           width={0}

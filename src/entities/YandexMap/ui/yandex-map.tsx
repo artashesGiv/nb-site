@@ -24,12 +24,12 @@ export const YandexMap = memo<YandexMapProps>(({ className = '', center }) => {
   };
 
   return (
-    <CardBase size={'s'} className={classes}>
+    <CardBase size="s" className={classes}>
       <YMaps>
         <Map
           defaultState={defaultState}
-          width={'100%'}
-          height={'400px'}
+          width="100%"
+          height="400px"
           options={mapOptions}
           state={defaultState}
         >
