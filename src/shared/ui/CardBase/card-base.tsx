@@ -6,7 +6,6 @@ export type CardBaseProps = DefaultPropsWithChildren<{
   size?: 's' | 'm' | 'l';
   view?: 'base' | 'fill';
   href?: string;
-  interactive?: boolean;
 }>;
 
 export const CardBase = memo<CardBaseProps>(

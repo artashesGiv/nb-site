@@ -22,7 +22,6 @@ export const CardCollapse = memo<CardCollapseProps>(
     return (
       <CardBase
         {...cardProps}
-        interactive
         className={classes}
         onClick={() => setIsOpen(prev => !prev)}
       >
