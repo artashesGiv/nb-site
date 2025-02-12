@@ -27,7 +27,7 @@ export const MainBanner = memo<MainBannerProps>(props => {
           <Button
             className='main-banner__btn'
             size='l'
-            view='primary'
+            view='base'
             text='Связаться с нами'
           />
         </div>
