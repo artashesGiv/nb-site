@@ -1,5 +1,21 @@
+@use './mixins' as *;
+@use './breakpoints' as *;
+
 html {
   font-size: 12px;
+
+  @media (min-width: 400px) {
+    font-size: 13.2px;
+  }
+  @include media-tablet {
+    font-size: 12px;
+  }
+  @include media-desktop {
+    font-size: 1vw;
+  }
+  @media (min-width: $maxRems) {
+    font-size: 14.4px;
+  }
 }
 
 body {

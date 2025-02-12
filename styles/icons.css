@@ -1,7 +1,7 @@
 @font-face {
     font-family: "icons";
-    src: url("/fonts/icons/icons.woff?cd17fedb39a89ea2b321c38d7a90e351") format("woff"),
-url("/fonts/icons/icons.woff2?cd17fedb39a89ea2b321c38d7a90e351") format("woff2");
+    src: url("/fonts/icons/icons.woff?fa651e6a8cea7a896c2c914e2ec4769e") format("woff"),
+url("/fonts/icons/icons.woff2?fa651e6a8cea7a896c2c914e2ec4769e") format("woff2");
 }
 
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
@@ -15,27 +15,30 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-chevron-down:before {
+.icon-burger:before {
     content: "\f101";
 }
-.icon-chevron-up:before {
+.icon-chevron-down:before {
     content: "\f102";
 }
-.icon-comment:before {
+.icon-chevron-up:before {
     content: "\f103";
 }
-.icon-cross:before {
+.icon-comment:before {
     content: "\f104";
 }
-.icon-mention:before {
+.icon-cross:before {
     content: "\f105";
 }
-.icon-person:before {
+.icon-mention:before {
     content: "\f106";
 }
-.icon-phone:before {
+.icon-person:before {
     content: "\f107";
 }
-.icon-trash:before {
+.icon-phone:before {
     content: "\f108";
+}
+.icon-trash:before {
+    content: "\f109";
 }

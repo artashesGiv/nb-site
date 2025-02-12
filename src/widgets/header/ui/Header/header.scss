@@ -2,14 +2,15 @@
   @include row;
   justify-content: space-between;
 
-  height: toRem(172);
+  height: toRem(108);
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(44px);
   padding: 0 toRem(64);
+  transition: var(--transition-all);
 
   &__logo {
-    width: toRem(187);
-    height: toRem(65);
+    width: toRem(85);
+    height: toRem(30);
   }
 
   &__links {
@@ -18,5 +19,14 @@
 
   @include media-maxTablet {
     border-radius: 0 0 toRem(24) toRem(24);
+  }
+
+  @include media-tablet {
+    height: toRem(172);
+
+    &__logo {
+      width: toRem(187);
+      height: toRem(65);
+    }
   }
 }

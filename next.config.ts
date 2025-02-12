@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     prependData: `
     @use "styles/utility/mixins.scss" as *;
     @use "styles/utility/functions.scss" as *;
+    @use "styles/utility/breakpoints.scss" as *;
     `,
   },
 };

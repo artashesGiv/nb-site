@@ -39,10 +39,7 @@ export const Button = memo<ButtonProps>(props => {
 
   return (
     <button className={classes} onClick={onClick}>
-      <TransitionBase
-        isVisible={true}
-        keyProp={loading ? 'loading' : 'default'}
-      >
+      <TransitionBase isVisible keyProp={loading ? 'loading' : 'default'}>
         {loading ? (
           <Spinner {...spinnerProps} />
         ) : (

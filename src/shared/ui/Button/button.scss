@@ -6,7 +6,6 @@
   justify-content: center;
   border: none;
   outline: none;
-  width: 100%;
   cursor: pointer;
   padding: 0 toRem(24);
   white-space: nowrap;
@@ -17,8 +16,10 @@
       background-color: var(--main-orange);
       color: var(--main-white);
 
-      &:hover {
-        box-shadow: var(--shadow-base);
+      @include media-hover-device {
+        &:hover {
+          box-shadow: var(--shadow-base);
+        }
       }
     }
 
@@ -26,9 +27,11 @@
       background-color: var(--main-white);
       color: var(--main-black);
 
-      &:hover {
-        background-color: var(--main-orange);
-        color: var(--main-white);
+      @include media-hover-device {
+        &:hover {
+          background-color: var(--main-orange);
+          color: var(--main-white);
+        }
       }
     }
 
@@ -36,8 +39,10 @@
       background-color: transparent;
       color: var(--main-black);
 
-      &:hover {
-        color: var(--main-orange);
+      @include media-hover-device {
+        &:hover {
+          color: var(--main-orange);
+        }
       }
     }
   }

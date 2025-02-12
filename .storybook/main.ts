@@ -1,5 +1,7 @@
 import type { StorybookConfig } from '@storybook/nextjs';
 
+//eslint-disable-next-line
+// @ts-ignore
 import path from 'node:path';
 
 const config: StorybookConfig = {
@@ -21,6 +23,8 @@ const config: StorybookConfig = {
         '@': path.resolve(__dirname, '../src'),
         '@styles': path.resolve(__dirname, '../styles'),
       };
+
+      config.resolve.extensions.push('.tsx');
     }
     return config;
   },
@@ -29,4 +33,5 @@ const config: StorybookConfig = {
   },
   staticDirs: ['../public'],
 };
+
 export default config;

@@ -4,7 +4,7 @@ import { memo, useMemo } from 'react';
 
 import Image from 'next/image';
 
-import { Button, TransitionBase, useScreenSize } from '@/shared';
+import { Button, useScreenSize } from '@/shared';
 
 import './header.scss';
 
@@ -24,17 +24,21 @@ export const Header = memo<HeaderProps>(props => {
         width={187}
         height={65}
       />
-      <TransitionBase isVisible>
-        {breakpoints.desktop && (
-          <div className='header__links'>
-            <Button text='О компании' view='flat' />
-            <Button text='Услуги' view='flat' />
-            <Button text='Проекты' view='flat' />
-            <Button text='Контакты' view='flat' />
-          </div>
-        )}
-        {breakpoints.maxTablet && <div>qweqw</div>}
-      </TransitionBase>
+      {breakpoints.desktop && (
+        <div className='header__links'>
+          <Button text='О компании' view='flat' />
+          <Button text='Услуги' view='flat' />
+          <Button text='Проекты' view='flat' />
+          <Button text='Контакты' view='flat' />
+        </div>
+      )}
+      {breakpoints.maxTablet && (
+        <Button
+          icon='burger'
+          size={breakpoints.maxMobile ? 's' : 'xl'}
+          view='flat'
+        />
+      )}
     </header>
   );
 });

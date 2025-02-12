@@ -1,5 +1,3 @@
-//$mobileBig: 375px;
-//$maxMobileSmall: $mobileBig - 1px;
 $tablet: 650px;
 $maxMobile: $tablet - 1px;
 $tabletLate: 768px;
@@ -8,17 +6,11 @@ $desktop: 1200px;
 $maxTablet: $desktop - 1px;
 $maxRems: 1440px;
 
-//@mixin media-mobileBig {
-//  @media (min-width: $mobileBig) {
-//    @content;
-//  }
-//}
-//
-//@mixin media-maxMobileSmall {
-//  @media (max-width: $maxMobileSmall) {
-//    @content;
-//  }
-//}
+@mixin media-hover-device {
+  @media (hover: hover), (min-width: $desktop) {
+    @content;
+  }
+}
 
 @mixin media-tablet {
   @media (min-width: $tablet) {
