@@ -1,6 +1,5 @@
-import { Header, MainBanner } from '@/widgets';
+import { Description, Header, MainBanner } from '@/widgets';
 
-// import { MainBanner } from '@/widgets';
 import './page.scss';
 
 export default function Index() {
@@ -8,6 +7,7 @@ export default function Index() {
     <div className='index'>
       <Header />
       <MainBanner />
+      <Description />
     </div>
   );
 }
