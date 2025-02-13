@@ -1,19 +1,34 @@
 'use client';
 
-import { memo, useMemo } from 'react';
+import { memo, useMemo, useState } from 'react';
 
 import Image from 'next/image';
 
-import { Button, useScreenSize } from '@/shared';
+import {
+  Button,
+  type ButtonProps,
+  TransitionBase,
+  useScreenSize,
+} from '@/shared';
+
+import { HeaderMobile } from '../HeaderMobile';
 
 import './header.scss';
 
 export type HeaderProps = DefaultProps;
 
+const headerLinks: (ButtonProps & { to: string })[] = [
+  { to: 'about', text: 'О компании' },
+  { to: 'services', text: 'Услуги' },
+  { to: 'projects', text: 'Проекты' },
+  { to: 'contacts', text: 'Контакты' },
+];
+
 export const Header = memo<HeaderProps>(props => {
   const classes = useHeaderClasses(props);
 
   const { breakpoints } = useScreenSize();
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className={classes}>
@@ -26,18 +41,23 @@ export const Header = memo<HeaderProps>(props => {
       />
       {breakpoints.desktop && (
         <div className='header__links'>
-          <Button text='О компании' view='flat' />
-          <Button text='Услуги' view='flat' />
-          <Button text='Проекты' view='flat' />
-          <Button text='Контакты' view='flat' />
+          {headerLinks.map(({ to, text }) => (
+            <Button key={to} text={text} view='flat' className='header__link' />
+          ))}
         </div>
       )}
       {breakpoints.maxTablet && (
-        <Button
-          icon='burger'
-          size={breakpoints.maxMobile ? 's' : 'xl'}
-          view='flat'
-        />
+        <>
+          <Button
+            icon='burger'
+            size={breakpoints.maxMobile ? 's' : 'xl'}
+            view='flat'
+            onClick={() => setMenuOpen(true)}
+          />
+          <TransitionBase isVisible={isMenuOpen}>
+            <HeaderMobile links={headerLinks} />
+          </TransitionBase>
+        </>
       )}
     </header>
   );

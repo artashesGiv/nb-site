@@ -1,0 +1,8 @@
+.header-mobile {
+  @include column(20);
+
+  box-shadow: var(--shadow-base);
+  background-color: var(--main-white);
+  border-radius: 0 0 toRem(16) toRem(16);
+  padding: toRem(24) toRem(18);
+}

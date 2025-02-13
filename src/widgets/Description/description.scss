@@ -8,7 +8,7 @@
     padding: toRem(60) toRem(20);
   }
 
-  @include min-width(desktop-xxl) {
+  @include min-width(desktopLarge) {
     padding: toRem(124) toRem(64);
   }
 

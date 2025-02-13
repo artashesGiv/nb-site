@@ -13,6 +13,7 @@ interface ScreenSize {
     tablet: boolean;
     tabletLate: boolean;
     desktop: boolean;
+    desktopLarge: boolean;
   };
 }
 
@@ -30,13 +31,14 @@ export const useScreenSize = () => {
 
 // Функция для вычисления текущего размера
 export const getScreenSize = (): ScreenSize => {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
+  const width = window?.innerWidth;
+  const height = window?.innerHeight;
 
   const breakpoints = {
     tablet: 650,
     tabletLate: 768,
     desktop: 1200,
+    desktopLarge: 1920,
   };
 
   return {
@@ -49,6 +51,7 @@ export const getScreenSize = (): ScreenSize => {
       tablet: width >= breakpoints.tablet,
       tabletLate: width >= breakpoints.tabletLate,
       desktop: width >= breakpoints.desktop,
+      desktopLarge: width >= breakpoints.desktopLarge,
     },
   };
 };

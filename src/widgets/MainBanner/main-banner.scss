@@ -22,7 +22,7 @@
     height: 100%;
     padding: toRem(58) toRem(18);
 
-    @include min-width(desktop-xxl) {
+    @include min-width(desktopLarge) {
       @include row(90);
       align-items: center;
       padding: 0 toRem(64);
@@ -32,7 +32,7 @@
   &__text {
     max-width: toRem(760);
 
-    @include min-width(desktop-xxl) {
+    @include min-width(desktopLarge) {
       height: toRem(520);
     }
   }
@@ -70,7 +70,7 @@
       }
     }
 
-    @include min-width(desktop-xxl) {
+    @include min-width(desktopLarge) {
       h1 {
         font: var(--h0);
       }
@@ -95,7 +95,7 @@
       font: var(--sh1);
     }
 
-    @include min-width(desktop-xxl) {
+    @include min-width(desktopLarge) {
       font: var(--h2);
       margin-top: toRem(56);
     }
@@ -109,7 +109,7 @@
       width: initial;
     }
 
-    @include min-width(desktop-xxl) {
+    @include min-width(desktopLarge) {
       height: toRem(520);
     }
   }
