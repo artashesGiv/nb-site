@@ -1,49 +1,39 @@
+@use 'sass:map';
+
 $tablet: 650px;
-$maxMobile: $tablet - 1px;
 $tabletLate: 768px;
-$maxMobileLate: $tabletLate - 1px;
 $desktop: 1200px;
-$maxTablet: $desktop - 1px;
-$maxRems: 1440px;
+
+$breakpoints: (
+  tablet: $tablet,
+  maxMobile: $tablet - 1px,
+  tabletLate: $tabletLate,
+  maxMobileLate: $tabletLate - 1px,
+  desktop: $desktop,
+  maxTablet: $desktop - 1px,
+  maxRems: 1440px,
+);
 
 @mixin media-hover-device {
-  @media (hover: hover), (min-width: $desktop) {
+  @media (hover: hover), (min-width: map.get($breakpoints, desktop)) {
     @content;
   }
 }
 
-@mixin media-tablet {
-  @media (min-width: $tablet) {
+@mixin min-width($key) {
+  $value: map.get($breakpoints, $key);
+  @media (min-width: $value) {
     @content;
   }
 }
 
-@mixin media-tabletLate {
-  @media (min-width: $tabletLate) {
-    @content;
-  }
-}
-
-@mixin media-desktop {
-  @media (min-width: $desktop) {
-    @content;
-  }
-}
-
-@mixin media-maxMobile {
-  @media (max-width: $maxMobile) {
-    @content;
-  }
-}
-
-@mixin media-maxMobileLate {
-  @media (max-width: $maxMobileLate) {
-    @content;
-  }
-}
-
-@mixin media-maxTablet {
-  @media (max-width: $maxTablet) {
-    @content;
+@mixin max-width($key) {
+  @if map.has-key($breakpoints, $key) {
+    $value: map.get($breakpoints, $key);
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Брейкпоинт #{$key} не найден в $breakpoints.";
   }
 }

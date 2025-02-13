@@ -7,13 +7,16 @@ html {
   @media (min-width: 400px) {
     font-size: 13.2px;
   }
-  @include media-tablet {
+
+  @include min-width(tablet) {
     font-size: 12px;
   }
-  @include media-desktop {
+
+  @include min-width(desktop) {
     font-size: 1vw;
   }
-  @media (min-width: $maxRems) {
+
+  @include min-width(maxRems) {
     font-size: 14.4px;
   }
 }
