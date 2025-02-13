@@ -1,4 +1,4 @@
-import { Header } from '@/widgets';
+import { Header, MainBanner } from '@/widgets';
 
 // import { MainBanner } from '@/widgets';
 import './page.scss';
@@ -7,7 +7,7 @@ export default function Index() {
   return (
     <div className='index'>
       <Header />
-      {/*<MainBanner />*/}
+      <MainBanner />
     </div>
   );
 }

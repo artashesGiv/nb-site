@@ -1,4 +1,6 @@
 .main-banner {
+  $b: &;
+
   aspect-ratio: 19 / 9;
   position: relative;
   color: var(--main-white);
@@ -21,14 +23,39 @@
     height: toRem(520);
   }
 
+  &__title-wrapper {
+    @include column(12);
+  }
+
   &__title {
-    font: var(--h0);
-    margin-bottom: toRem(12);
+    @include row();
+    cursor: default;
+    &:hover {
+      color: var(--main-orange);
+
+      #{$b}__title-icon {
+        width: toRem(70);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      font: var(--h0);
+    }
+  }
+
+  &__title-icon {
+    font-size: toRem(40);
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: var(--transition-all);
+    transition-property: width, opacity;
   }
 
   &__description {
     font: var(--h2);
-    margin-top: toRem(44);
+    margin-top: toRem(56);
   }
 
   &__btn-wrapper {

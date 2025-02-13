@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 
 import Image from 'next/image';
 
-import { Button } from '@/shared';
+import { Button, IconBase } from '@/shared';
 
 import './main-banner.scss';
 
@@ -15,9 +15,17 @@ export const MainBanner = memo<MainBannerProps>(props => {
     <div className={classes}>
       <div className='main-banner__content'>
         <div className='main-banner__text'>
-          <h1 className='main-banner__title'>Анализируем</h1>
-          <h1 className='main-banner__title'>Создаем</h1>
-          <h1 className='main-banner__title'>Масштабируем</h1>
+          <div className='main-banner__title-wrapper'>
+            {['Анализируем', 'Масштабируем', 'Создаем'].map(title => (
+              <div className='main-banner__title' key={title}>
+                <IconBase
+                  className='main-banner__title-icon'
+                  name='chevron-down'
+                />
+                <h1>{title}</h1>
+              </div>
+            ))}
+          </div>
           <p className='main-banner__description'>
             New Brand предлагает широкий спектр услуг в области ИТ по
             трансформации вашего бизнеса и перехода на цифровой уровень
