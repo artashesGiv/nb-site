@@ -17,11 +17,11 @@
     @include row(50);
   }
 
-  @include media-maxTablet {
+  @include max-width(maxTablet) {
     border-radius: 0 0 toRem(24) toRem(24);
   }
 
-  @include media-tablet {
+  @include min-width(tablet) {
     height: toRem(172);
 
     &__logo {

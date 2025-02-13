@@ -13,7 +13,7 @@
 
   &--view {
     &--primary {
-      background-color: var(--main-orange);
+      background-color: var(--primary-color);
       color: var(--main-white);
 
       @include media-hover-device {
@@ -29,7 +29,7 @@
 
       @include media-hover-device {
         &:hover {
-          background-color: var(--main-orange);
+          background-color: var(--primary-color);
           color: var(--main-white);
         }
       }
@@ -41,7 +41,7 @@
 
       @include media-hover-device {
         &:hover {
-          color: var(--main-orange);
+          color: var(--primary-color);
         }
       }
     }
