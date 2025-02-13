@@ -49,12 +49,14 @@
     @include row();
     cursor: default;
 
-    &:hover {
-      color: var(--primary-color);
+    @include media-hover-device {
+      &:hover {
+        color: var(--primary-color);
 
-      #{$b}__title-icon {
-        width: toRem(70);
-        opacity: 1;
+        #{$b}__title-icon {
+          width: toRem(70);
+          opacity: 1;
+        }
       }
     }
 
