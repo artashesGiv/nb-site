@@ -71,13 +71,17 @@
     }
 
     &--l {
-      height: toRem(80);
+      height: toRem(56);
       min-width: toRem(80);
       font: var(--b1);
       border-radius: toRem(16);
 
       #{$b}__icon {
         font-size: toRem(40);
+      }
+
+      @include min-width(desktop-xxl) {
+        height: toRem(80);
       }
     }
 
