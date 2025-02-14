@@ -5,7 +5,7 @@
   height: toRem(108);
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(44px);
-  padding: 0 toRem(64);
+  padding: 0 toRem(18);
   transition: var(--transition-all);
 
   &__logo {
@@ -27,10 +27,15 @@
 
   @include min-width(tablet) {
     height: toRem(172);
+    padding: 0 toRem(32);
 
     &__logo {
       width: toRem(187);
       height: toRem(65);
     }
+  }
+
+  @include min-width(tabletLate) {
+    padding: 0 toRem(64);
   }
 }
