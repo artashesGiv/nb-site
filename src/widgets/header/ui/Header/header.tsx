@@ -1,17 +1,17 @@
 'use client';
 
-import { memo, useMemo, useState } from 'react';
+import { memo, useMemo, useRef, useState } from 'react';
 
 import Image from 'next/image';
 
 import {
   Button,
   type ButtonProps,
-  TransitionBase,
+  useOnClickOutside,
   useScreenSize,
 } from '@/shared';
 
-import { HeaderMobile } from '../HeaderMobile';
+import { HeaderMenuModal } from '../HeaderMenuModal';
 
 import './header.scss';
 
@@ -29,6 +29,10 @@ export const Header = memo<HeaderProps>(props => {
 
   const { breakpoints } = useScreenSize();
   const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const headerMenuRef = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside(headerMenuRef, () => setMenuOpen(false));
 
   return (
     <header className={classes}>
@@ -54,9 +58,11 @@ export const Header = memo<HeaderProps>(props => {
             view='flat'
             onClick={() => setMenuOpen(true)}
           />
-          <TransitionBase isVisible={isMenuOpen}>
-            <HeaderMobile links={headerLinks} />
-          </TransitionBase>
+          <HeaderMenuModal
+            isOpen={isMenuOpen}
+            links={headerLinks}
+            ref={headerMenuRef}
+          />
         </>
       )}
     </header>

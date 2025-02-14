@@ -8,6 +8,7 @@ declare global {
   type DefaultProps<T = object> = {
     className?: string;
     onClick?: () => void;
+    ref?: Ref<HTMLElement>;
   } & T;
   type DefaultPropsWithChildren<T> = DefaultProps<T> & { children?: ReactNode };
 }

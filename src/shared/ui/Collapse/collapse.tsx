@@ -33,7 +33,7 @@ export const Collapse = memo<CollapseProps>(
         >
           {title}
         </div>
-        <TransitionExpand>{isOpen && content}</TransitionExpand>
+        <TransitionExpand isVisible={isOpen}>{content}</TransitionExpand>
       </div>
     );
   },

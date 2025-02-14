@@ -9,6 +9,7 @@
   cursor: pointer;
   padding: 0 toRem(24);
   white-space: nowrap;
+  width: 100%;
   transition: var(--transition-all);
 
   &--view {

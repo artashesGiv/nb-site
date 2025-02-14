@@ -10,11 +10,15 @@
 
   &__logo {
     width: toRem(85);
-    height: toRem(30);
+    height: auto;
   }
 
   &__links {
     @include row(50);
+  }
+
+  &__link {
+    width: auto;
   }
 
   @include max-width(maxTablet) {

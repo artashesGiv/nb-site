@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { HeaderMobile } from './header-mobile';
+import { HeaderMobileMenu } from './header-mobile-menu';
 
 const meta = {
   title: 'Widgets/HeaderMobile',
-  component: HeaderMobile,
+  component: HeaderMobileMenu,
   parameters: {
     layout: 'padded',
   },
-} satisfies Meta<typeof HeaderMobile>;
+} satisfies Meta<typeof HeaderMobileMenu>;
 
 export default meta;
 

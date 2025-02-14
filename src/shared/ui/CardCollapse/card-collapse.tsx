@@ -34,8 +34,8 @@ export const CardCollapse = memo<CardCollapseProps>(
           <span className='card-collapse__title'>{title}</span>
           <IconBase name='chevron-down' className='card-collapse__icon' />
         </div>
-        <TransitionExpand>
-          {isOpen && <div className='card-collapse__content'>{children}</div>}
+        <TransitionExpand isVisible={isOpen}>
+          <div className='card-collapse__content'>{children}</div>
         </TransitionExpand>
       </CardBase>
     );
