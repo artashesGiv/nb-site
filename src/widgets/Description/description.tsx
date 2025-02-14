@@ -10,7 +10,7 @@ export const Description = memo<DescriptionProps>(props => {
   const classes = useDescriptionClasses(props);
 
   return (
-    <div className={classes}>
+    <section id='description' className={classes}>
       <div className='description__text-wrapper'>
         <h2 className='description__title'>Команда NEW BRAND</h2>
         <p className='description__text-first'>
@@ -32,7 +32,7 @@ export const Description = memo<DescriptionProps>(props => {
           width={880}
         />
       </div>
-    </div>
+    </section>
   );
 });
 
