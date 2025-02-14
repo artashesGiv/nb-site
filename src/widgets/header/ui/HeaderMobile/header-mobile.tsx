@@ -16,19 +16,23 @@ export const HeaderMobile = memo<HeaderMobileProps>(props => {
 
   return (
     <div className={classes}>
-      {links.map(({ to, text }) => (
-        <Button
-          key={to}
-          text={text}
-          view='flat'
-          className='header-mobile__link'
-        />
-      ))}
+      <div className='header-mobile__links'>
+        {links.map(({ to, text }) => (
+          <Button
+            key={to}
+            text={text}
+            view='flat'
+            className='header-mobile__link'
+          />
+        ))}
+      </div>
+
       <Image
         src='/images/decorators/header-mobile.png'
         alt='decor'
-        width={386}
-        height={566}
+        width={315}
+        height={140}
+        className='header-mobile__decor'
       />
     </div>
   );
