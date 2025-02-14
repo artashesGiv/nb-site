@@ -1,9 +1,6 @@
 import { memo, useMemo } from 'react';
-
 import Image from 'next/image';
-
 import { Button, type ButtonProps } from '@/shared';
-
 import './header-mobile-menu.scss';
 
 export type HeaderMobileMenuProps = DefaultProps<{

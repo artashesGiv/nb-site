@@ -9,9 +9,7 @@ import {
   useMemo,
   useState,
 } from 'react';
-
 import { TransitionExpand } from '../TransitionExpand';
-
 import './collapse.scss';
 
 export type CollapseProps = DefaultProps<{

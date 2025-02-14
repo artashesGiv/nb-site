@@ -1,13 +1,10 @@
 'use client';
 
 import { memo, useMemo, useState } from 'react';
-
 import Image from 'next/image';
-
 import { CardBase, type CardBaseProps } from '../CardBase';
 import { IconBase } from '../IconBase';
 import { TransitionExpand } from '../TransitionExpand';
-
 import './card-collapse.scss';
 
 export type CardCollapseProps = DefaultPropsWithChildren<{

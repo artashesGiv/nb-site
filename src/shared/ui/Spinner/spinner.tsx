@@ -1,5 +1,4 @@
 import { memo, useMemo } from 'react';
-
 import './spinner.scss';
 
 type SpinnerSize = 's' | 'm' | 'l' | 'xxl';

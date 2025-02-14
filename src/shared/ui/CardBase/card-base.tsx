@@ -1,5 +1,4 @@
 import { memo, useMemo } from 'react';
-
 import './card-base.scss';
 
 export type CardBaseProps = DefaultPropsWithChildren<{

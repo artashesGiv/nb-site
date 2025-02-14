@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { HeaderMobileMenu } from './header-mobile-menu';
 
 const meta = {

@@ -50,11 +50,5 @@
     "sass": "^1.83.4",
     "storybook": "^8.5.3",
     "typescript": "^5"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "next lint --fix",
-      "prettier --write ."
-    ]
   }
 }

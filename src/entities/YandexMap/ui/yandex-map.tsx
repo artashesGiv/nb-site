@@ -1,9 +1,6 @@
 import { memo, useMemo } from 'react';
-
 import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
-
 import { CardBase } from '@/shared';
-
 import './yandex-map.scss';
 
 export type YandexMapProps = DefaultProps<{

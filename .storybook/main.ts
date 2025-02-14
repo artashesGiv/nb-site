@@ -1,5 +1,4 @@
 import type { StorybookConfig } from '@storybook/nextjs';
-
 //eslint-disable-next-line
 // @ts-ignore
 import path from 'node:path';
@@ -24,7 +23,7 @@ const config: StorybookConfig = {
         '@styles': path.resolve(__dirname, '../styles'),
       };
 
-      config.resolve.extensions.push('.tsx');
+      config.resolve.extensions?.push('.tsx');
     }
     return config;
   },

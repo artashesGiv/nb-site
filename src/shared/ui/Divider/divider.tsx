@@ -1,5 +1,4 @@
 import { memo, useMemo } from 'react';
-
 import './divider.scss';
 
 type DividerView = 'dark' | 'light';

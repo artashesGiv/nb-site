@@ -1,5 +1,4 @@
 import { memo, useMemo } from 'react';
-
 import './icon-base.scss';
 
 export type IconBaseProps = DefaultProps<{

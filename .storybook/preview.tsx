@@ -1,10 +1,7 @@
 import type { Preview } from '@storybook/react';
-
 import { ScreenSizeProvider } from '../src/app/providers';
-
 import './preview.css';
 import { customViewports } from './viewports';
-
 import '@styles/index.scss';
 
 const preview: Preview = {

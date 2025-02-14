@@ -1,9 +1,7 @@
 'use client';
 
 import { memo, useCallback, useMemo, useRef, useState } from 'react';
-
 import Image from 'next/image';
-
 import {
   Button,
   type ButtonProps,
@@ -11,9 +9,7 @@ import {
   useOnClickOutside,
   useScreenSize,
 } from '@/shared';
-
 import { HeaderMenuModal } from '../HeaderMenuModal';
-
 import './header.scss';
 
 export type HeaderProps = DefaultProps;

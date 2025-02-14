@@ -1,5 +1,4 @@
 import { type ReactNode } from 'react';
-
 import { type IconsId } from '@/shared';
 
 declare global {

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { YandexMap } from './yandex-map';
 
 const meta = {

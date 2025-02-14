@@ -1,5 +1,4 @@
 import { Description, Header, MainBanner } from '@/widgets';
-
 import './page.scss';
 
 export default function Index() {

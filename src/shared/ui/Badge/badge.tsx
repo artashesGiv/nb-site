@@ -1,5 +1,4 @@
 import { memo, useMemo } from 'react';
-
 import './badge.scss';
 
 export type BadgeProps = DefaultProps<{

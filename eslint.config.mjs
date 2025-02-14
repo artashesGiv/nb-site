@@ -99,9 +99,8 @@ const eslintConfig = [
           // Исключаем реактовские импорты из автоматического распределения по группам,
           // чтобы правило pathGroups для "react" сработало корректно.
           pathGroupsExcludedImportTypes: ['react'],
-          // Раздел
-          // яем группы пустыми строками
-          'newlines-between': 'always',
+          // Разделяем группы пустыми строками
+          'newlines-between': 'never',
           // Опционально: сортировка импортов в пределах группы по алфавиту
           alphabetize: {
             order: 'asc',

@@ -1,7 +1,5 @@
 import { type ChangeEvent, memo, useCallback, useMemo } from 'react';
-
 import { IconBase } from '../IconBase';
-
 import './input.scss';
 
 export type InputProps = DefaultProps<{

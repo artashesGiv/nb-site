@@ -1,7 +1,5 @@
 import { memo, useMemo } from 'react';
-
 import Image from 'next/image';
-
 import './description.scss';
 
 export type DescriptionProps = DefaultProps;

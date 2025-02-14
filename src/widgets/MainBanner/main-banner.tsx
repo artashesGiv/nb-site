@@ -1,9 +1,6 @@
 import { memo, useMemo } from 'react';
-
 import Image from 'next/image';
-
 import { Button, IconBase } from '@/shared';
-
 import './main-banner.scss';
 
 export type MainBannerProps = DefaultProps;

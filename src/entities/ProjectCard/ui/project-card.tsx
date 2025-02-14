@@ -1,9 +1,6 @@
 import { memo, useMemo } from 'react';
-
 import Image from 'next/image';
-
 import { CardBase } from '@/shared/ui/CardBase';
-
 import './project-card.scss';
 
 export type ProjectCardProps = DefaultProps<{

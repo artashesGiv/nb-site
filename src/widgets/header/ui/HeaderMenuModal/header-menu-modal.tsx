@@ -1,13 +1,10 @@
 import { memo, useMemo } from 'react';
-
 import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { createPortal } from 'react-dom';
-
 import {
   HeaderMobileMenu,
   type HeaderMobileMenuProps,
 } from '../HeaderMobileMenu';
-
 import './header-menu-modal.scss';
 
 export type HeaderMenuModalProps = DefaultProps<{

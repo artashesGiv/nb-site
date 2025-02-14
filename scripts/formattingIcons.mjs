@@ -1,5 +1,4 @@
 import SVGFixer from 'oslllo-svg-fixer';
-
 import { readdir, unlink } from 'node:fs';
 import { extname, join } from 'node:path';
 
