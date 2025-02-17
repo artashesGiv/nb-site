@@ -1,13 +1,33 @@
 .project-card {
   display: flex;
   flex-direction: column;
-  gap: toRem(32);
+  gap: toRem(16);
+  padding: toRem(16);
 
   &__image {
     border-radius: var(--border-radius-base);
+    height: auto;
   }
 
   &__title {
-    font: var(--h2);
+    font: var(--b1);
+  }
+
+  @include min-width(tabletLate) {
+    gap: toRem(24);
+    padding: toRem(24);
+
+    &__title {
+      font: var(--sh1);
+    }
+  }
+
+  @include min-width(desktop) {
+    gap: toRem(32);
+    padding: toRem(32);
+
+    &__title {
+      font: var(--h2);
+    }
   }
 }

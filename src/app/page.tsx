@@ -1,4 +1,4 @@
-import { Header, Partners } from '@/widgets';
+import { Header, Projects } from '@/widgets';
 import './page.scss';
 
 export default function Index() {
@@ -7,7 +7,8 @@ export default function Index() {
       <Header />
       {/*<MainBanner />*/}
       {/*<Description />*/}
-      <Partners />
+      {/*<Partners />*/}
+      <Projects />
     </div>
   );
 }

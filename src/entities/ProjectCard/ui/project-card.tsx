@@ -6,7 +6,7 @@ import './project-card.scss';
 export type ProjectCardProps = DefaultProps<{
   src: string;
   title: string;
-  href: string;
+  href?: string;
 }>;
 
 export const ProjectCard = memo<ProjectCardProps>(
@@ -14,13 +14,14 @@ export const ProjectCard = memo<ProjectCardProps>(
     const classes = useProjectCardClasses(className);
 
     return (
-      <CardBase className={classes} size="l" href={href}>
+      <CardBase className={classes} size='s' href={href}>
         <Image
           className='project-card__image'
           src={src}
           alt={title}
-          width={800}
-          height={400}
+          width={0}
+          height={0}
+          layout='responsive'
         />
         <span className='project-card__title'>{title}</span>
       </CardBase>
