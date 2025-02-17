@@ -1,0 +1,40 @@
+.technology {
+  margin-top: toRem(24);
+
+  @include min-width(maxRems) {
+    margin-top: toRem(124);
+  }
+
+  &__item {
+    @include column(12);
+    padding: toRem(16) 0;
+
+    @include min-width(tabletLate) {
+      @include row(32);
+      font: var(--h2);
+      flex-basis: toRem(400);
+      padding: toRem(32) 0;
+    }
+  }
+
+  &__item-title {
+    font: var(--b2);
+    flex-basis: toRem(50);
+    flex-shrink: 0;
+
+    @include min-width(tabletLate) {
+      font: var(--h2);
+      flex-basis: toRem(400);
+    }
+  }
+
+  &__badges {
+    @include row(24);
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    margin: toRem(124) auto 0;
+    max-width: toRem(576);
+  }
+}

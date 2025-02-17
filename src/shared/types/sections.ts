@@ -1,1 +1,6 @@
-export type Sections = 'description' | 'services' | 'projects' | 'contacts';
+export type Sections =
+  | 'description'
+  | 'services'
+  | 'projects'
+  | 'contacts'
+  | 'technology';
