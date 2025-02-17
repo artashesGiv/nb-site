@@ -1,12 +1,15 @@
+'use client';
+
 import { memo, useMemo } from 'react';
 import Image from 'next/image';
-import { Button, IconBase } from '@/shared';
+import { Button, IconBase, useScreenSize } from '@/shared';
 import './main-banner.scss';
 
 export type MainBannerProps = DefaultProps;
 
 export const MainBanner = memo<MainBannerProps>(props => {
   const classes = useMainBannerClasses(props);
+  const { breakpoints } = useScreenSize();
 
   return (
     <section id='main' className={classes}>
@@ -31,7 +34,7 @@ export const MainBanner = memo<MainBannerProps>(props => {
         <div className='main-banner__btn-wrapper'>
           <Button
             className='main-banner__btn'
-            size='l'
+            size={breakpoints.tablet ? 'l' : 's'}
             view='base'
             text='Связаться с нами'
           />
