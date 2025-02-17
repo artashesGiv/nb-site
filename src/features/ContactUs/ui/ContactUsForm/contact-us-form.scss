@@ -1,0 +1,36 @@
+.contact-us-form {
+  @include column(24);
+
+  &__button {
+    margin-top: toRem(8);
+  }
+
+  @include min-width(tabletLate) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: toRem(32);
+
+    &__input {
+      &--name {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      &--second-name {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+      &--phone {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+      &--mail {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+      &--comment {
+        grid-area: 3 / 1 / 4 / 3;
+      }
+    }
+
+    &__button {
+      margin-top: toRem(12);
+    }
+  }
+}

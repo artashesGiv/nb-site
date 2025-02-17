@@ -8,15 +8,15 @@ export type CardBaseProps = DefaultPropsWithChildren<{
 }>;
 
 export const CardBase = memo<CardBaseProps>(props => {
-  const normaliseProps: CardBaseProps = {
+  const normalizedProps: CardBaseProps = {
     ...props,
     size: props.size ?? 'm',
     view: props.view ?? 'base',
   };
 
-  const { children, onClick, href } = normaliseProps;
+  const { children, onClick, href } = normalizedProps;
 
-  const classes = useProjectCardClasses(normaliseProps);
+  const classes = useProjectCardClasses(normalizedProps);
 
   return (
     <div className={classes} onClick={onClick || undefined}>

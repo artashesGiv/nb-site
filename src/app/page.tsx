@@ -1,14 +1,21 @@
-import { Header, Projects } from '@/widgets';
+'use client';
+
+import { useScreenSize } from '@/shared';
+import { ContactUsModal, ContactUsSection, Header } from '@/widgets';
 import './page.scss';
 
 export default function Index() {
+  const { breakpoints } = useScreenSize();
+
   return (
     <div className='index'>
       <Header />
       {/*<MainBanner />*/}
       {/*<Description />*/}
       {/*<Partners />*/}
-      <Projects />
+      {/*<Projects />*/}
+      {breakpoints.maxMobileLate && <ContactUsSection />}
+      <ContactUsModal isShow={false} />
     </div>
   );
 }

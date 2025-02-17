@@ -1,14 +1,8 @@
 .input {
-  @include row(10);
-  height: toRem(80);
-  border: 1px solid var(--main-gray);
-  padding: 0 toRem(24);
-  border-radius: toRem(16);
-  transition: var(--transition-all);
+  $b: &;
 
-  &__icon {
-    font-size: toRem(28);
-  }
+  border: 1px solid var(--main-gray);
+  transition: var(--transition-all);
 
   &__value {
     flex-grow: 1;
@@ -16,10 +10,41 @@
     border: none;
     outline: none;
     background-color: transparent;
-    font: var(--b1);
 
     &::placeholder {
       color: var(--main-gray);
+    }
+  }
+
+  &--size {
+    &--m {
+      @include row(8);
+      height: toRem(48);
+      padding: 0 toRem(18);
+      border-radius: toRem(8);
+
+      #{$b}__icon {
+        font-size: toRem(24);
+      }
+
+      #{$b}__value {
+        font: var(--b2);
+      }
+    }
+
+    &--l {
+      @include row(10);
+      height: toRem(80);
+      padding: 0 toRem(24);
+      border-radius: toRem(16);
+
+      #{$b}__icon {
+        font-size: toRem(28);
+      }
+
+      #{$b}__value {
+        font: var(--b1);
+      }
     }
   }
 

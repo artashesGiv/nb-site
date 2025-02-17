@@ -1,0 +1,11 @@
+.contact-us-modal {
+  @include center;
+
+  background-color: var(--main-white);
+  width: 100%;
+  max-width: toRem(1072);
+  box-shadow: var(--shadow-base);
+  border-radius: var(--border-radius-base);
+  padding: toRem(48);
+  overflow: hidden;
+}

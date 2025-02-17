@@ -7,14 +7,21 @@ export type InputProps = DefaultProps<{
   value?: string;
   placeholder?: string;
   isError?: boolean;
+  size?: 'm' | 'l';
   onChange: (value: string) => void;
   onChangeIsError?: (isError: boolean) => void;
 }>;
 
 export const Input = memo<InputProps>(props => {
-  const { value, icon, onChange, placeholder, onChangeIsError } = props;
+  const normalizedProps = {
+    ...props,
+    size: props.size ?? 'm',
+  };
 
-  const classes = useInputClasses(props);
+  const { value, icon, onChange, placeholder, onChangeIsError } =
+    normalizedProps;
+
+  const classes = useInputClasses(normalizedProps);
 
   const onChangeHandler = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -40,13 +47,13 @@ export const Input = memo<InputProps>(props => {
 
 Input.displayName = 'Input';
 
-const useInputClasses = ({ className, isError }: InputProps) =>
+const useInputClasses = ({ className, isError, size }: InputProps) =>
   useMemo(() => {
-    const classes = [className, 'input'];
+    const classes = [className, 'input', `input--size--${size}`];
 
     if (isError) {
       classes.push('is-error');
     }
 
     return classes.join(' ');
-  }, [className, isError]);
+  }, [className, isError, size]);

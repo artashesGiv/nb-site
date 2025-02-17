@@ -1,0 +1,40 @@
+.contact-us {
+  @include column(24);
+
+  &__decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: toRem(180);
+    height: auto;
+    z-index: -1;
+  }
+
+  &__header {
+    @include column(16);
+  }
+
+  &__content {
+  }
+
+  &__footer {
+    text-align: center;
+    font: var(--b2);
+    color: var(--main-gray);
+  }
+
+  &__description {
+    font: var(--sh1);
+  }
+
+  @include min-width(tablet) {
+    &__decor {
+      width: toRem(300);
+      height: auto;
+    }
+  }
+
+  @include min-width(tabletLate) {
+    @include column(48);
+  }
+}
