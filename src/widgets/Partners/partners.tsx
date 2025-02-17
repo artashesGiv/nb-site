@@ -10,11 +10,9 @@ export const Partners = memo<PartnersProps>(props => {
   const classes = usePartnersClasses(props);
 
   return (
-    <section id='partners' className={classes}>
-      <SectionContainer>
-        <Title text='Partners' type='h2' />
-      </SectionContainer>
-    </section>
+    <SectionContainer id='partners' className={classes}>
+      <Title text='Partners' type='h2' />
+    </SectionContainer>
   );
 });
 
