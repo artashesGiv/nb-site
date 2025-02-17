@@ -1,2 +1,56 @@
 .partners {
+  @include column(64);
+
+  &__header {
+    @include column(32);
+
+    p {
+      display: block;
+      max-width: toRem(1100);
+      font: var(--b2);
+    }
+  }
+
+  &__content {
+    @include column(32);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__card {
+    height: toRem(180);
+    width: 100%;
+    max-width: toRem(400);
+  }
+
+  @include min-width(tabletLate) {
+    &__header {
+      p {
+        font: var(--sh1);
+      }
+    }
+
+    &__content {
+      @include row(32);
+      justify-content: center;
+    }
+  }
+
+  @include min-width(desktop) {
+    &__card {
+      width: 100%;
+      height: toRem(200);
+    }
+  }
+
+  @include min-width(desktopLarge) {
+    &__header {
+      @include row(32);
+      justify-content: space-between;
+    }
+
+    &__content {
+      flex-wrap: nowrap;
+    }
+  }
 }

@@ -7,23 +7,24 @@ export type CardBaseProps = DefaultPropsWithChildren<{
   href?: string;
 }>;
 
-export const CardBase = memo<CardBaseProps>(
-  ({ children, className = '', size = 'm', view = 'base', href, onClick }) => {
-    const classes = useProjectCardClasses({
-      className,
-      size,
-      view,
-      onClick,
-    });
+export const CardBase = memo<CardBaseProps>(props => {
+  const normaliseProps: CardBaseProps = {
+    ...props,
+    size: props.size ?? 'm',
+    view: props.view ?? 'base',
+  };
 
-    return (
-      <div className={classes} onClick={onClick || undefined}>
-        {children}
-        {href && <a href={href} className='card-base__href' />}
-      </div>
-    );
-  },
-);
+  const { children, onClick, href } = normaliseProps;
+
+  const classes = useProjectCardClasses(normaliseProps);
+
+  return (
+    <div className={classes} onClick={onClick || undefined}>
+      {children}
+      {href && <a href={href} target='_blank' className='card-base__href' />}
+    </div>
+  );
+});
 
 CardBase.displayName = 'CardBase';
 
@@ -32,6 +33,7 @@ const useProjectCardClasses = ({
   size,
   view,
   onClick,
+  href,
 }: CardBaseProps) =>
   useMemo(() => {
     const classes = [
@@ -41,9 +43,9 @@ const useProjectCardClasses = ({
       `card-base--view--${view}`,
     ];
 
-    if (onClick) {
+    if (onClick || href) {
       classes.push('is-interactive');
     }
 
     return classes.join(' ');
-  }, [className, size, view, onClick]);
+  }, [className, size, view, onClick, href]);
