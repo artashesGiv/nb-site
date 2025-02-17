@@ -15,7 +15,7 @@ export default function Index() {
       {/*<Partners />*/}
       {/*<Projects />*/}
       {breakpoints.maxMobileLate && <ContactUsSection />}
-      <ContactUsModal isShow={false} />
+      <ContactUsModal isShow={breakpoints.tablet} />
     </div>
   );
 }

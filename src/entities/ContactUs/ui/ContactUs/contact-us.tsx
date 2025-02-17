@@ -1,14 +1,16 @@
 'use client';
 
-import { memo, useMemo } from 'react';
+import { memo, type ReactNode, useMemo } from 'react';
 import Image from 'next/image';
-import { ContactUsForm } from '@/features';
 import { Title } from '@/shared';
 import './contact-us.scss';
 
-export type ContactUsProps = DefaultProps;
+export type ContactUsProps = DefaultProps<{
+  form: ReactNode;
+}>;
 
 export const ContactUs = memo<ContactUsProps>(props => {
+  const { form } = props;
   const classes = useContactUsClasses(props);
 
   return (
@@ -26,7 +28,7 @@ export const ContactUs = memo<ContactUsProps>(props => {
           Наши специалисты свяжутся с вами для консультации
         </p>
       </div>
-      <ContactUsForm className='contact-us__content' />
+      {form}
       <div className='contact-us__footer'>
         Нажимая «Отправить» Вы соглашаетесь на обработку персональных данных
       </div>

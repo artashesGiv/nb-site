@@ -2,7 +2,7 @@
 
 import { memo, useMemo } from 'react';
 import { createPortal } from 'react-dom';
-import { ContactUs } from '@/entities';
+import { ContactUs, ContactUsForm } from '@/entities';
 import { TransitionBase } from '@/shared';
 import './contact-us-modal.scss';
 
@@ -18,7 +18,7 @@ export const ContactUsModal = memo<ContactUsModalProps>(props => {
     <TransitionBase isVisible={isShow}>
       {createPortal(
         <div className={classes}>
-          <ContactUs />
+          <ContactUs form={<ContactUsForm />} />
         </div>,
         document.body,
       )}

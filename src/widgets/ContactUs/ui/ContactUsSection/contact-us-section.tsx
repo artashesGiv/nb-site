@@ -1,7 +1,7 @@
 'use client';
 
 import { memo, useMemo } from 'react';
-import { ContactUs } from '@/entities';
+import { ContactUs, ContactUsForm } from '@/entities';
 import { SectionContainer } from '@/shared';
 import './contact-us-section.scss';
 
@@ -12,7 +12,7 @@ export const ContactUsSection = memo<ContactUsProps>(props => {
 
   return (
     <SectionContainer className={classes}>
-      <ContactUs />
+      <ContactUs form={<ContactUsForm />} />
     </SectionContainer>
   );
 });

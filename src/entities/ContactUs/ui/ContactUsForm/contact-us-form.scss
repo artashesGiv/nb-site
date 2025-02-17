@@ -5,7 +5,7 @@
     margin-top: toRem(8);
   }
 
-  @include min-width(tabletLate) {
+  @include min-width(desktop) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -31,6 +31,7 @@
 
     &__button {
       margin-top: toRem(12);
+      grid-area: 4 / 1 / 4 / 3;
     }
   }
 }
