@@ -81,26 +81,24 @@ export const Services = memo<ServicesProps>(props => {
   ];
 
   return (
-    <section id='services' className={classes}>
-      <SectionContainer>
-        <Title text='Наши услуги' type='h2' className='services__title' />
-        <div>
-          {servicesList.map(service => (
-            <CardCollapse
-              key={service.title}
-              imageSrc={service.src}
-              title={service.title}
-            >
-              <div>
-                {service.description.map((elem, idx) => (
-                  <div key={`elem-${idx}`}>{elem}</div>
-                ))}
-              </div>
-            </CardCollapse>
-          ))}
-        </div>
-      </SectionContainer>
-    </section>
+    <SectionContainer id='services' className={classes}>
+      <Title text='Наши услуги' type='h2' className='services__title' />
+      <div>
+        {servicesList.map(service => (
+          <CardCollapse
+            key={service.title}
+            imageSrc={service.src}
+            title={service.title}
+          >
+            <div>
+              {service.description.map((elem, idx) => (
+                <div key={`elem-${idx}`}>{elem}</div>
+              ))}
+            </div>
+          </CardCollapse>
+        ))}
+      </div>
+    </SectionContainer>
   );
 });
 
