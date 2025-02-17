@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import Image from 'next/image';
+import { Title } from '@/shared';
 import './description.scss';
 
 export type DescriptionProps = DefaultProps;
@@ -10,7 +11,7 @@ export const Description = memo<DescriptionProps>(props => {
   return (
     <section id='description' className={classes}>
       <div className='description__text-wrapper'>
-        <h2 className='description__title'>Команда NEW BRAND</h2>
+        <Title text='Команда NEW BRAND' type='h2' />
         <p className='description__text-first'>
           Это 50+ высококлассных специалистов, имеющих более 17 лет опыта
           в разработке программных продуктов «под ключ».

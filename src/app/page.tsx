@@ -1,13 +1,14 @@
-import { Header, Partners } from '@/widgets';
+import { Description, Header, MainBanner, Services } from '@/widgets';
 import './page.scss';
 
 export default function Index() {
   return (
     <div className='index'>
       <Header />
-      {/*<MainBanner />*/}
-      {/*<Description />*/}
-      <Partners />
+      <MainBanner />
+      <Description />
+      {/*<Partners />*/}
+      <Services />
     </div>
   );
 }

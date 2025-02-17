@@ -24,20 +24,6 @@
     }
   }
 
-  &__title {
-    font: var(--sh1);
-    font-weight: 700;
-
-    @include min-width(tabletLate) {
-      font: var(--h2);
-    }
-
-    @include min-width(desktop) {
-      font: var(--h1);
-      white-space: nowrap;
-    }
-  }
-
   &__text-first,
   &__text-second {
     font-size: toRem(16);
