@@ -34,7 +34,7 @@ export const MainBanner = memo<MainBannerProps>(props => {
         <div className='main-banner__btn-wrapper'>
           <Button
             className='main-banner__btn'
-            size={breakpoints.tablet ? 'l' : 's'}
+            size={breakpoints.desktopLarge ? 'l' : 's'}
             view='base'
             text='Связаться с нами'
           />

@@ -1,4 +1,5 @@
 .services {
+  position: relative;
   margin-top: toRem(24);
 
   @include min-width(maxRems) {
@@ -31,9 +32,22 @@
 
   &__card-description {
     margin-top: toRem(24);
+
     @include max-width(tablet) {
       font-size: toRem(16);
       line-height: initial;
+    }
+  }
+
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    display: none;
+
+    @include min-width(maxRems) {
+      display: block;
     }
   }
 }

@@ -1,4 +1,5 @@
 import { memo, useMemo } from 'react';
+import Image from 'next/image';
 import { CardCollapse, SectionContainer, Title } from '@/shared';
 import './services.scss';
 
@@ -99,6 +100,13 @@ export const Services = memo<ServicesProps>(props => {
           </CardCollapse>
         ))}
       </div>
+      <Image
+        className='services__bg-img'
+        src='/images/decorators/main-decor.png'
+        alt='декорация'
+        width={1500}
+        height={1000}
+      />
     </SectionContainer>
   );
 });
