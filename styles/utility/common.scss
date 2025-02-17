@@ -4,21 +4,21 @@
 html {
   font-size: 12px;
 
-  @media (min-width: 400px) {
-    font-size: 13.2px;
-  }
-
-  @include min-width(tablet) {
-    font-size: 12px;
-  }
-
-  @include min-width(desktop) {
-    font-size: 1vw;
-  }
-
-  @include min-width(maxRems) {
-    font-size: 14.4px;
-  }
+  //@media (min-width: 400px) {
+  //  font-size: 13.2px;
+  //}
+  //
+  //@include min-width(tablet) {
+  //  font-size: 12px;
+  //}
+  //
+  //@include min-width(desktop) {
+  //  font-size: 1vw;
+  //}
+  //
+  //@include min-width(maxRems) {
+  //  font-size: 12px;
+  //}
 }
 
 body {

@@ -11,15 +11,18 @@ export type ContactUsModalProps = DefaultProps<{
 }>;
 
 export const ContactUsModal = memo<ContactUsModalProps>(props => {
-  const { isShow } = props;
+  const { isShow, ref } = props;
   const classes = useContactUsModalClasses(props);
 
   return (
     <TransitionBase isVisible={isShow}>
       {createPortal(
-        <div className={classes}>
-          <ContactUs form={<ContactUsForm />} />
-        </div>,
+        <>
+          <div className='contact-us-modal__overlay' />
+          <div ref={ref} className={classes}>
+            <ContactUs form={<ContactUsForm />} />
+          </div>
+        </>,
         document.body,
       )}
     </TransitionBase>

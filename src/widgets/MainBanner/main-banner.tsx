@@ -3,9 +3,12 @@ import Image from 'next/image';
 import { Button, IconBase } from '@/shared';
 import './main-banner.scss';
 
-export type MainBannerProps = DefaultProps;
+export type MainBannerProps = DefaultProps<{
+  onClickContactUs?: () => void;
+}>;
 
 export const MainBanner = memo<MainBannerProps>(props => {
+  const { onClickContactUs } = props;
   const classes = useMainBannerClasses(props);
 
   return (
@@ -34,6 +37,7 @@ export const MainBanner = memo<MainBannerProps>(props => {
             size='l'
             view='base'
             text='Связаться с нами'
+            onClick={onClickContactUs}
           />
         </div>
       </div>

@@ -19,8 +19,8 @@ export const ContactUs = memo<ContactUsProps>(props => {
         alt='decor'
         src='/images/decorators/contact-us.png'
         className='contact-us__decor'
-        width={300}
-        height={300}
+        width={200}
+        height={200}
       />
       <div className='contact-us__header'>
         <Title text='Оставьте заявку' type='h2' className='contact-us__title' />

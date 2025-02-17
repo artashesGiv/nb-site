@@ -25,9 +25,12 @@ export const ContactUsForm = memo<ContactUsFormProps>(props => {
         <Input
           key={key}
           {...value.bind}
-          onChange={(value: string) => handleFormChange(key, value)}
           className={`contact-us-form__input contact-us-form__input--${key}`}
           size={breakpoints.tablet ? 'l' : 'm'}
+          onChange={(value: string) => handleFormChange(key, value)}
+          onChangeIsError={() =>
+            onChangeFormData(setFormData, key, 'isError', false)
+          }
         />
       ))}
       <Button
@@ -49,20 +52,29 @@ const useContactUsFormClasses = ({ className }: ContactUsFormProps) =>
     return classes.join(' ');
   }, [className]);
 
+const onChangeFormData = (
+  setFormData: Dispatch<SetStateAction<ContactUsFormData>>,
+  key: keyof typeof contactFormData,
+  bindKey: keyof (typeof contactFormData)[keyof typeof contactFormData]['bind'],
+  value: unknown,
+) => {
+  setFormData(prev => ({
+    ...prev,
+    [key]: {
+      ...prev[key],
+      bind: {
+        ...prev[key].bind,
+        [bindKey]: value,
+      },
+    },
+  }));
+};
+
 const useHandleForm = () => {
   const [formData, setFormData] = useState(contactFormData);
   const handleFormChange = useCallback(
     (key: keyof typeof formData, value: string) => {
-      setFormData(prev => ({
-        ...prev,
-        [key]: {
-          ...prev[key],
-          bind: {
-            ...prev[key].bind,
-            value,
-          },
-        },
-      }));
+      onChangeFormData(setFormData, key, 'value', value);
     },
     [setFormData],
   );
@@ -77,20 +89,10 @@ const onFormValidate = (
   let isValid = true;
 
   Object.entries(formData).forEach(([key, value]) => {
-    if (
-      value.bind.value &&
-      value.regex &&
-      !value.regex.test(value.bind.value)
-    ) {
+    if (!value.bind.value || !value.regex?.test(value.bind.value)) {
       isValid = false;
 
-      setFormData(prev => ({
-        ...prev,
-        [key]: {
-          ...prev[key],
-          isError: true,
-        },
-      }));
+      onChangeFormData(setFormData, key, 'isError', true);
     }
   });
 

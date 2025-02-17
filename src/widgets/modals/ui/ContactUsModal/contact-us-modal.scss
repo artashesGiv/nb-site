@@ -2,10 +2,21 @@
   @include center;
 
   background-color: var(--main-white);
-  width: 100%;
+  width: 80%;
   max-width: toRem(1072);
   box-shadow: var(--shadow-base);
   border-radius: var(--border-radius-base);
   padding: toRem(48);
   overflow: hidden;
+  z-index: var(--modal-index);
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: calc(var(--modal-index) - 1);
+  }
 }
