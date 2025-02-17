@@ -6,6 +6,7 @@
   background-color: var(--main-white);
   border-radius: 0 0 toRem(16) toRem(16);
   padding: toRem(24) toRem(18);
+  overflow: hidden;
 
   &__links {
     display: contents;

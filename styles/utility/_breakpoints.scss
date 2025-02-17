@@ -30,12 +30,8 @@ $breakpoints: (
 }
 
 @mixin max-width($key) {
-  @if map.has-key($breakpoints, $key) {
-    $value: map.get($breakpoints, $key);
-    @media (max-width: $value) {
-      @content;
-    }
-  } @else {
-    @warn "Брейкпоинт #{$key} не найден в $breakpoints.";
+  $value: map.get($breakpoints, $key);
+  @media (max-width: $value) {
+    @content;
   }
 }

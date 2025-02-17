@@ -8,3 +8,5 @@ export * from './TransitionExpand';
 export * from './Collapse';
 export * from './CardBase';
 export * from './CardCollapse';
+export * from './SectionContainer';
+export * from './Title';

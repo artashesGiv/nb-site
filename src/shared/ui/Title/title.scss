@@ -1,0 +1,25 @@
+.title {
+  font-weight: 700;
+
+  &--type {
+    &--h2 {
+      font-size: toRem(28);
+      line-height: toRem(56);
+
+      @include min-width(tabletLate) {
+        font-size: toRem(32);
+        line-height: toRem(46);
+      }
+
+      @include min-width(desktop) {
+        font-size: toRem(48);
+        line-height: toRem(64);
+      }
+    }
+
+    &--h1 {
+      font-size: toRem(48);
+      line-height: toRem(64);
+    }
+  }
+}
