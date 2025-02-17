@@ -3,7 +3,7 @@
 import { createContext, useContext } from 'react';
 
 // Типы экрана
-interface ScreenSize {
+export type ScreenSize = {
   width: number;
   height: number;
   breakpoints: {
@@ -15,7 +15,7 @@ interface ScreenSize {
     desktop: boolean;
     desktopLarge: boolean;
   };
-}
+};
 
 // Контекст экрана
 export const ScreenSizeContext = createContext<ScreenSize | null>(null);

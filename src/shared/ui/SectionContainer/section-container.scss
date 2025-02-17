@@ -1,0 +1,11 @@
+.section-container {
+  padding: 0 toRem(18);
+
+  @include min-width(tablet) {
+    padding: 0 toRem(32);
+  }
+
+  @include min-width(tabletLate) {
+    padding: 0 toRem(64);
+  }
+}
