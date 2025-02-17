@@ -26,7 +26,13 @@ export const CardCollapse = memo<CardCollapseProps>(
       >
         <div className='card-collapse__header'>
           {imageSrc && (
-            <Image src={imageSrc} alt={title} width={88} height={88} />
+            <Image
+              className='card-collapse__img'
+              src={imageSrc}
+              alt={title}
+              width={88}
+              height={88}
+            />
           )}
           <span className='card-collapse__title'>{title}</span>
           <IconBase name='chevron-down' className='card-collapse__icon' />

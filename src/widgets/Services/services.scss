@@ -1,5 +1,39 @@
 .services {
+  margin-top: toRem(24);
+
+  @include min-width(maxRems) {
+    margin-top: toRem(124);
+  }
+
   &__title {
     margin-bottom: toRem(40);
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: toRem(16);
+
+    @include min-width(maxRems) {
+      grid-template-columns: 1fr 1fr;
+      gap: toRem(24);
+    }
+
+    @include min-width(desktopLarge) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: toRem(32);
+    }
+  }
+
+  &__card {
+    align-self: flex-start;
+  }
+
+  &__card-description {
+    margin-top: toRem(24);
+    @include max-width(tablet) {
+      font-size: toRem(16);
+      line-height: initial;
+    }
   }
 }

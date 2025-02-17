@@ -12,7 +12,7 @@ export const MainBanner = memo<MainBannerProps>(props => {
   const { breakpoints } = useScreenSize();
 
   return (
-    <section id='main' className={classes}>
+    <div id='main' className={classes}>
       <div className='main-banner__content'>
         <div className='main-banner__text'>
           <div className='main-banner__title-wrapper'>
@@ -46,7 +46,7 @@ export const MainBanner = memo<MainBannerProps>(props => {
         alt='bg'
         fill
       />
-    </section>
+    </div>
   );
 });
 

@@ -5,16 +5,18 @@
   @include min-width(desktop) {
     @include row(32);
     align-items: center;
-    padding: toRem(60) toRem(20);
+    padding-top: toRem(60);
+    padding-bottom: toRem(60);
   }
 
   @include min-width(desktopLarge) {
-    padding: toRem(124) toRem(64);
+    padding-top: toRem(124);
+    padding-bottom: toRem(124);
   }
 
   &__text-wrapper {
     @include column(16);
-    padding: toRem(24) toRem(18);
+    padding: toRem(24) 0;
     flex: 50% 1 1;
     max-width: toRem(1000);
 
@@ -49,9 +51,9 @@
     flex-shrink: 1;
     overflow: hidden;
     margin: 0 auto;
+    border-radius: toRem(16);
 
     @include min-width(desktop) {
-      border-radius: toRem(16);
       margin: 0 0 0 auto;
     }
   }

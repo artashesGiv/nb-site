@@ -22,10 +22,17 @@
     height: 100%;
     padding: toRem(58) toRem(18);
 
+    @include min-width(tablet) {
+      padding: toRem(58) toRem(32);
+    }
+
+    @include min-width(tabletLate) {
+      padding: toRem(58) toRem(64);
+    }
+
     @include min-width(desktopLarge) {
       @include row(90);
       align-items: center;
-      padding: 0 toRem(64);
     }
   }
 

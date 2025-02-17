@@ -8,7 +8,7 @@ export const Services = memo<ServicesProps>(props => {
   const classes = useServicesClasses(props);
   const servicesList = [
     {
-      src: '',
+      src: '/images/services/airplay-video.svg',
       title: 'Государственные информационные системы',
       description: [
         '— Разработка проектной документации ',
@@ -18,7 +18,7 @@ export const Services = memo<ServicesProps>(props => {
       ],
     },
     {
-      src: '',
+      src: '/images/services/computing.svg',
       title: 'BI-аналитика',
       description: [
         '— Разработка и внедрение систем бизнес-аналитики ',
@@ -28,7 +28,7 @@ export const Services = memo<ServicesProps>(props => {
       ],
     },
     {
-      src: '',
+      src: '/images/services/airplay-audio.svg',
       title: 'Стратегия цифровой трансформации',
       description: [
         '— Анализ текущего состояния компании ',
@@ -41,7 +41,7 @@ export const Services = memo<ServicesProps>(props => {
       ],
     },
     {
-      src: '',
+      src: '/images/services/command.svg',
       title: 'Консультационные услуги по внедрению IT-стратегии',
       description: [
         '— ИТ-аудит ',
@@ -51,7 +51,7 @@ export const Services = memo<ServicesProps>(props => {
       ],
     },
     {
-      src: '',
+      src: '/images/services/copy.svg',
       title: 'Портальные решения для государства и бизнеса',
       description: [
         '— Анализ потребностей ',
@@ -60,7 +60,7 @@ export const Services = memo<ServicesProps>(props => {
       ],
     },
     {
-      src: '',
+      src: '/images/services/newspaper.svg',
       title: 'Бизнес-анализ компании',
       description: [
         '— Анализ текущего состояния компании ',
@@ -69,7 +69,7 @@ export const Services = memo<ServicesProps>(props => {
       ],
     },
     {
-      src: '',
+      src: '/images/services/devices.svg',
       title: 'Разработка программных продуктов и мобильных приложений',
       description: [
         '— Разработка документации ',
@@ -83,14 +83,15 @@ export const Services = memo<ServicesProps>(props => {
   return (
     <SectionContainer id='services' className={classes}>
       <Title text='Наши услуги' type='h2' className='services__title' />
-      <div>
+      <div className='services__content'>
         {servicesList.map(service => (
           <CardCollapse
             key={service.title}
             imageSrc={service.src}
             title={service.title}
+            className='services__card'
           >
-            <div>
+            <div className='services__card-description'>
               {service.description.map((elem, idx) => (
                 <div key={`elem-${idx}`}>{elem}</div>
               ))}

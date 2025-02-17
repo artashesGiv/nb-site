@@ -5,14 +5,32 @@
     @include row(20);
   }
 
+  &__img {
+    @include max-width(tablet) {
+      width: toRem(40);
+      height: toRem(40);
+    }
+  }
+
   &__title {
     flex-grow: 1;
-    font: var(--sh1);
+    font-size: toRem(16);
+    line-height: initial;
+
+    @include min-width(tablet) {
+      font: var(--sh1);
+    }
   }
 
   &__icon {
-    font-size: toRem(35);
+    font-size: toRem(20);
     color: var(--dark-gray);
+    transition: var(--transition-all);
+    transition-property: transform;
+
+    @include min-width(tablet) {
+      font-size: toRem(35);
+    }
   }
 
   &__content {
