@@ -5,6 +5,7 @@ import Image from 'next/image';
 import {
   Button,
   type ButtonProps,
+  SectionContainer,
   type Sections,
   useOnClickOutside,
   useScreenSize,
@@ -32,41 +33,43 @@ export const Header = memo<HeaderProps>(props => {
 
   return (
     <header className={classes}>
-      <Image
-        src='/images/header/logo.png'
-        alt='logo'
-        className='header__logo'
-        width={187}
-        height={65}
-      />
-      {breakpoints.desktop && (
-        <div className='header__links'>
-          {headerLinks.map(({ to, text }) => (
+      <SectionContainer>
+        <Image
+          src='/images/header/logo.png'
+          alt='logo'
+          className='header__logo'
+          width={187}
+          height={65}
+        />
+        {breakpoints.desktop && (
+          <div className='header__links'>
+            {headerLinks.map(({ to, text }) => (
+              <Button
+                key={to}
+                text={text}
+                view='flat'
+                className='header__link'
+                onClick={() => scrollToSection(to)}
+              />
+            ))}
+          </div>
+        )}
+        {breakpoints.maxTablet && (
+          <>
             <Button
-              key={to}
-              text={text}
+              icon='burger'
+              size={breakpoints.maxMobile ? 's' : 'xl'}
               view='flat'
-              className='header__link'
-              onClick={() => scrollToSection(to)}
+              onClick={() => setMenuOpen(true)}
             />
-          ))}
-        </div>
-      )}
-      {breakpoints.maxTablet && (
-        <>
-          <Button
-            icon='burger'
-            size={breakpoints.maxMobile ? 's' : 'xl'}
-            view='flat'
-            onClick={() => setMenuOpen(true)}
-          />
-          <HeaderMenuModal
-            isOpen={isMenuOpen}
-            links={headerLinks}
-            ref={headerMenuRef}
-          />
-        </>
-      )}
+            <HeaderMenuModal
+              isOpen={isMenuOpen}
+              links={headerLinks}
+              ref={headerMenuRef}
+            />
+          </>
+        )}
+      </SectionContainer>
     </header>
   );
 });

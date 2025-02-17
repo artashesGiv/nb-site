@@ -1,13 +1,20 @@
 import { memo, useMemo } from 'react';
 import './section-container.scss';
 
-export type SectionContainerProps = DefaultPropsWithChildren;
+export type SectionContainerProps = DefaultPropsWithChildren<{
+  id?: string;
+}>;
 
 export const SectionContainer = memo<SectionContainerProps>(props => {
-  const { children } = props;
+  const { children, id } = props;
   const classes = useSectionContainerClasses(props);
 
-  return <div className={classes}> {children} </div>;
+  return (
+    <section id={id} className={classes}>
+      {' '}
+      {children}{' '}
+    </section>
+  );
 });
 
 SectionContainer.displayName = 'SectionContainer';
