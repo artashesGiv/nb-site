@@ -13,9 +13,10 @@ export const TransitionBase = memo<TransitionBaseProps>(props => {
   const { isVisible, duration = 0.3, children } = props;
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode='wait'>
       {isVisible && (
         <motion.div
+          key={isVisible.toString()}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
